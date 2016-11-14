@@ -1,1 +1,2 @@
-#7SEAS FMS created by Seong Chee Ken #034807 for Object Oriented Development with Java module @ Asia Pacific University of Technology & Innovation
+#7SEAS FMS created by Seong Chee Ken 
+##for Object Oriented Development with Java module @ Asia Pacific University of Technology & Innovation
