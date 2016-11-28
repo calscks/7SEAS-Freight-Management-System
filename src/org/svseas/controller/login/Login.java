@@ -3,6 +3,7 @@ package org.svseas.controller.login;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
 import javafx.scene.text.Font;
 
 import java.util.LinkedList;
@@ -26,12 +27,12 @@ public class Login {
     @FXML
     public void initialize(){
         Font.loadFont(getClass().getResourceAsStream("/font/Aaargh.ttf"), 25);
-        List<Label> labelList = new LinkedList<>();
-        labelList.add(lblFreight);
-        labelList.add(lblMS);
+        List<Labeled> list = new LinkedList<>();
+        list.add(lblFreight);
+        list.add(lblMS);
 
-        for (Label label: labelList){
-            label.setStyle("-fx-font-family: Aaargh Normal");
+        for (Labeled labeled: list){
+            labeled.setStyle("-fx-font-family: Aaargh Normal");
         }
     }
 }
