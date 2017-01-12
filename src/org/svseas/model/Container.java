@@ -1,7 +1,7 @@
 package org.svseas.model;
 
 /**
- * Codes by Seong Chee Ken on 11/01/2017, 23:11.
+ * Codes by Seong Chee Ken on 11/01/2017, 23:11. Container for array type T.
  */
 
 import javax.xml.bind.annotation.XmlAnyElement;

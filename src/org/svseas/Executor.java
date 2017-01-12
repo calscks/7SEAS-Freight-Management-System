@@ -16,7 +16,7 @@ public class Executor extends Application{
         Parent root = FXMLLoader.load(getClass().getResource("/org/svseas/view/Login.fxml"));
         Scene scene = new Scene(root);
 
-        primaryStage.setTitle("blah");
+        primaryStage.setTitle("7SEAS Freight Management System");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
