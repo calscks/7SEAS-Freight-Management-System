@@ -8,10 +8,10 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Root<T> {
+public class Container<T> {
     private List<T> root;
 
-    public Root(){
+    public Container(){
         root = new ArrayList<T>();
     }
 
@@ -36,6 +36,7 @@ public class Root<T> {
     }
 
     @XmlAnyElement(lax = true)
+
     public List<T> getRoot() {
         return root;
     }
