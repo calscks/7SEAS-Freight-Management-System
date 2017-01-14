@@ -6,19 +6,28 @@ import org.svseas.model.ObjectList;
 import org.svseas.model.UserAccount;
 
 import javax.xml.bind.JAXBException;
+import java.net.URL;
 
 /**
  * Codes by Seong Chee Ken on 14/01/2017, 18:05. CRUD operations on Account.
  */
 public class AccountOperations {
 
-    XMLOperation xmlOperation = new XMLOperation(ObjectList.class, UserAccount.class);
+    private XMLOperation xmlOperation = new XMLOperation(ObjectList.class, UserAccount.class);
 
     public AccountOperations() throws JAXBException {
     }
 
+    public boolean analyse(){
+        URL url = AccountOperations.class.getClassLoader().getResource(DataFile.ACCOUNT.getData_path());
+        return url != null; //if url != null, true, else false
+    }
+
     public boolean create(String username, String password, UserType userType){
         UserAccount userAccount = new UserAccount(username, password, userType);
+        if (!analyse()){
+            return false;
+        }
         @SuppressWarnings("unchecked")
         ObjectList<UserAccount> accountList = (ObjectList<UserAccount>) xmlOperation.read(DataFile.ACCOUNT);
         for (UserAccount account: accountList.getList()){

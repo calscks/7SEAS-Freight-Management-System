@@ -8,7 +8,7 @@ import java.util.Objects;
  * Codes by Seong Chee Ken on 11/01/2017, 19:24.
  */
 
-@XmlRootElement(name = "useracc")
+@XmlRootElement
 public class UserAccount {
     private String username;
     private String password;
@@ -19,6 +19,8 @@ public class UserAccount {
         this.password = password;
         this.userType = userType;
     }
+
+    public UserAccount(){}
 
     public String getUsername() {
         return username;
