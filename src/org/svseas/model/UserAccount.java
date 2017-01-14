@@ -1,8 +1,6 @@
 package org.svseas.model;
 
-import org.svseas.utils.UserType;
-
-import javax.xml.bind.annotation.XmlElement;
+import org.svseas.data.UserType;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
@@ -22,7 +20,6 @@ public class UserAccount {
         this.userType = userType;
     }
 
-    @XmlElement
     public String getUsername() {
         return username;
     }
@@ -31,7 +28,6 @@ public class UserAccount {
         this.username = username;
     }
 
-    @XmlElement
     public String getPassword() {
         return password;
     }
@@ -40,7 +36,6 @@ public class UserAccount {
         this.password = password;
     }
 
-    @XmlElement
     public UserType getUserType() {
         return userType;
     }

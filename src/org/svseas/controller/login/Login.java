@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.text.Font;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,7 +20,9 @@ public class Login {
     @FXML
     Label lblMS;
     @FXML
-    JFXButton btnLogin;
+    JFXButton btn_Login;
+    @FXML
+    JFXButton btn_custReg;
 
     public Login(){
     }
@@ -27,12 +30,16 @@ public class Login {
     @FXML
     public void initialize(){
         Font.loadFont(getClass().getResourceAsStream("/font/Aaargh.ttf"), 25);
-        List<Labeled> list = new LinkedList<>();
+        List<Labeled> list = new ArrayList<>();
         list.add(lblFreight);
         list.add(lblMS);
 
         for (Labeled labeled: list){
             labeled.setStyle("-fx-font-family: Aaargh Normal");
         }
+    }
+
+    private void login_operation(){
+
     }
 }
