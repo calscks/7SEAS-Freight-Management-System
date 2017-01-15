@@ -4,8 +4,7 @@ package org.svseas.data;
  * Codes by Seong Chee Ken on 13/01/2017, 00:09.
  */
 public enum DataFile {
-    ACCOUNT("useracc", "src/dat/account.xml"),
-    TEST("xx", "xx");
+    ACCOUNT("useracc", "src/dat/account.xml");
 
     private String data_name;
     private String data_path;

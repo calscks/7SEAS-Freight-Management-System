@@ -4,6 +4,7 @@ import org.svseas.data.DataFile;
 import org.svseas.data.UserType;
 import org.svseas.model.ObjectList;
 import org.svseas.model.UserAccount;
+import org.svseas.utils.Tester;
 
 import javax.xml.bind.JAXBException;
 import java.net.URL;
@@ -13,17 +14,17 @@ import java.net.URL;
  */
 public class AccountOperations {
 
-    private XMLOperation xmlOperation = new XMLOperation(ObjectList.class, UserAccount.class);
+    private static XMLOperation xmlOperation = new XMLOperation(ObjectList.class, UserAccount.class);
 
     public AccountOperations() throws JAXBException {
     }
 
-    public boolean analyse(){
+    public static boolean analyse(){
         URL url = AccountOperations.class.getClassLoader().getResource(DataFile.ACCOUNT.getData_path());
         return url != null; //if url != null, true, else false
     }
 
-    public boolean create(String username, String password, UserType userType){
+    public static boolean create(String username, String password, UserType userType){
         UserAccount userAccount = new UserAccount(username, password, userType);
         if (!analyse()){
             return false;
@@ -39,15 +40,32 @@ public class AccountOperations {
         } return false;
     }
 
-    public boolean read(String username){
+    public static boolean read(String username){
         @SuppressWarnings("unchecked")
         ObjectList<UserAccount> accountList = (ObjectList<UserAccount>) xmlOperation.read(DataFile.ACCOUNT);
         for (UserAccount account: accountList.getList()){
-            if (account.getUsername().equals(username)) return true;
-        } return false;
+            if (account.getUsername().equals(username)) {
+                Tester.SUCCESS.printer();
+                return true;
+            }
+        } Tester.FAIL.printer();
+        return false;
     }
 
-    public boolean update(UserAccount userAccount){
+    public static boolean read(String username, String password){
+        @SuppressWarnings("unchecked")
+        ObjectList<UserAccount> accountList = (ObjectList<UserAccount>) xmlOperation.read(DataFile.ACCOUNT);
+        for (UserAccount account: accountList.getList()){
+            if (account.getUsername().equals(username) && account.getPassword().equals(password))
+            {
+                Tester.SUCCESS.printer();
+                return true;
+            }
+        } Tester.FAIL.printer();
+        return false;
+    }
+
+    public static boolean update(UserAccount userAccount){
         @SuppressWarnings("unchecked")
         ObjectList<UserAccount> accountList = (ObjectList<UserAccount>) xmlOperation.read(DataFile.ACCOUNT);
         for (UserAccount account: accountList.getList()){
@@ -59,7 +77,7 @@ public class AccountOperations {
         } return false;
     }
 
-    public boolean remove(String username){
+    public static boolean remove(String username){
         @SuppressWarnings("unchecked")
         ObjectList<UserAccount> accountList = (ObjectList<UserAccount>) xmlOperation.read(DataFile.ACCOUNT);
         for (UserAccount account: accountList.getList()){
