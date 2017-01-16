@@ -1,47 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.SplitPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 
-<SplitPane dividerPositions="0.20031298904538342" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
-   <items>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <VBox prefHeight="718.0" prefWidth="253.0" style="-fx-background-color: rgba(52, 73, 94,1.0);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <left>
+            <AnchorPane prefHeight="720.0" prefWidth="250.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton prefHeight="67.0" prefWidth="253.0" ripplerFill="#819cbf" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton prefHeight="67.0" prefWidth="253.0" ripplerFill="#819cbf" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton prefHeight="67.0" prefWidth="253.0" ripplerFill="#819cbf" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton prefHeight="67.0" prefWidth="253.0" ripplerFill="#819cbf" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton prefHeight="67.0" prefWidth="253.0" ripplerFill="#819cbf" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </JFXButton>
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #446CB3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label prefHeight="33.0" prefWidth="250.0" text="Label" textFill="#eeeeee">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="139.0" prefWidth="250.0" style="-fx-background-color: #4183D7;">
+                           <children>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                           <effect>
+                              <InnerShadow blurType="GAUSSIAN" color="#0000008f" height="28.3" radius="6.575" width="0.0" />
+                           </effect>
+                        </VBox>
+                        <Label prefHeight="33.0" prefWidth="250.0" text="Label" textFill="#eeeeee">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="138.0" prefWidth="250.0" style="-fx-background-color: #EEEEEE;">
+                           <children>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#9c9c9c76" textAlignment="CENTER" textFill="#656464">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#9c9c9c76" textAlignment="CENTER" textFill="#656464">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#9c9c9c76" textAlignment="CENTER" textFill="#656464">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#9c9c9c76" textAlignment="CENTER" textFill="#656464">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                           <effect>
+                              <InnerShadow color="#0000008f" height="26.93" radius="6.2325" width="0.0" />
+                           </effect>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <InnerShadow color="#00000071" height="0.0" radius="4.75" />
+                     </effect>
+                  </VBox>
                </children>
-            </VBox>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="718.0" prefWidth="820.0" />
-   </items>
-</SplitPane>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="720.0" prefWidth="1025.0" style="-fx-background-color: rgba(236, 240, 241,1.0);" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

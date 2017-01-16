@@ -13,17 +13,17 @@ import javax.xml.bind.JAXBException;
  * Codes by Seong Chee Ken on 08/01/2017, 01:25.
  */
 public class Initializer {
-    public Initializer(){
+    public Initializer() {
         //creates admin account
-        try {
-            if (!new AccountOperations().analyse()){
-                UserAccount userAccount = new UserAccount("admin","admin", UserType.ADMIN);
-                ObjectList<UserAccount> adminList = new ObjectList<>();
-                adminList.add(userAccount);
-                new XMLOperation(ObjectList.class, UserAccount.class).write(DataFile.ACCOUNT, adminList);
-            }
-        } catch (JAXBException e) {
-            e.printStackTrace();
+        if (!AccountOperations.analyse()) {
+            UserAccount userAccount = new UserAccount("admin", "admin", UserType.ADMIN);
+            ObjectList<UserAccount> adminList = new ObjectList<>();
+            adminList.add(userAccount);
+            new XMLOperation(ObjectList.class, UserAccount.class).write(DataFile.ACCOUNT, adminList);
+            UserAccount userAccount2 = new UserAccount("admin2", "admin2", UserType.ADMIN);
+            ObjectList<UserAccount> adminList2 = new ObjectList<>();
+            adminList2.add(userAccount2);
+            new XMLOperation(ObjectList.class, UserAccount.class).write(DataFile.ACCOUNT, adminList2);
         }
     }
 }
