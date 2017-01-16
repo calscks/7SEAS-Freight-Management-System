@@ -53,6 +53,7 @@ public class Login {
     public void initialize() {
         pane_root.getChildren().remove(dialog);
         Font.loadFont(getClass().getResourceAsStream("/font/Aaargh.ttf"), 25);
+        pane_root.getStylesheets().add(Login.class.getResource("/resources/css/styles.css").toExternalForm());
         List<Labeled> list = new ArrayList<>();
         list.add(lblFreight);
         list.add(lblMS);

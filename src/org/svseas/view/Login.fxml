@@ -18,6 +18,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import com.jfoenix.controls.JFXDialogLayout?>
+<?import javafx.scene.text.Text?>
 <StackPane fx:id="pane_root" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.svseas.controller.login.Login">
    <children>
       <AnchorPane fx:id="pane_Login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="534.0">
@@ -83,7 +84,7 @@
                <Label>Invalid Username/Password</Label>
             </heading>
             <body>
-               <Label text="Invalid username or password. New user please click on customer registration.
+               <Text text="Invalid username or password. New user please click on customer registration.
                   &#10;For client registration, please contact system administrator." textAlignment="JUSTIFY"/>
             </body>
             <actions>

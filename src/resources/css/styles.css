@@ -1,0 +1,6 @@
+.jfx-text-field .errorLabel, .jfx-password-field .errorLabel , .jfx-text-area .errorLabel{
+    -fx-text-fill : rgba(231, 76, 60,1.0);
+}
+.jfx-text-field .errorIcon, .jfx-password-field .errorIcon, .jfx-text-area .errorIcon{
+    -fx-text-fill : rgba(231, 76, 60,1.0);
+}
