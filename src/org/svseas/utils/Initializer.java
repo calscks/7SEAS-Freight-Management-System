@@ -20,10 +20,6 @@ public class Initializer {
             ObjectList<UserAccount> adminList = new ObjectList<>();
             adminList.add(userAccount);
             new XMLOperation(ObjectList.class, UserAccount.class).write(DataFile.ACCOUNT, adminList);
-            UserAccount userAccount2 = new UserAccount("admin2", "admin2", UserType.ADMIN);
-            ObjectList<UserAccount> adminList2 = new ObjectList<>();
-            adminList2.add(userAccount2);
-            new XMLOperation(ObjectList.class, UserAccount.class).write(DataFile.ACCOUNT, adminList2);
         }
     }
 }

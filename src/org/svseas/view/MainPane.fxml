@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
@@ -19,7 +18,7 @@
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #446CB3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label prefHeight="33.0" prefWidth="250.0" text="Label" textFill="#eeeeee">
+                        <Label prefHeight="33.0" prefWidth="250.0" text="Client Management" textFill="#eeeeee">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -32,17 +31,17 @@
                         </Label>
                         <VBox prefHeight="139.0" prefWidth="250.0" style="-fx-background-color: #4183D7;">
                            <children>
-                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" textAlignment="CENTER" textFill="WHITE">
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" text="Register Client" textAlignment="CENTER" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" textFill="WHITE">
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" text="Search Client" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" textFill="WHITE">
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" text="Load Client" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -57,7 +56,7 @@
                               <InnerShadow blurType="GAUSSIAN" color="#0000008f" height="28.3" radius="6.575" width="0.0" />
                            </effect>
                         </VBox>
-                        <Label prefHeight="33.0" prefWidth="250.0" text="Label" textFill="#eeeeee">
+                        <Label prefHeight="33.0" prefWidth="250.0" text="Route Management" textFill="#eeeeee">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -70,7 +69,7 @@
                         </Label>
                         <VBox prefHeight="138.0" prefWidth="250.0" style="-fx-background-color: #EEEEEE;">
                            <children>
-                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#9c9c9c76" textAlignment="CENTER" textFill="#656464">
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#9c9c9c76" text="Load Routes" textAlignment="CENTER" textFill="#656464">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -95,6 +94,55 @@
                               <InnerShadow color="#0000008f" height="26.93" radius="6.2325" width="0.0" />
                            </effect>
                         </VBox>
+                        <Label prefHeight="33.0" prefWidth="250.0" text="Freight Management" textFill="#eeeeee">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="138.0" prefWidth="250.0" style="-fx-background-color: rgba(39, 174, 96,1.0);">
+                           <children>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#ffffff27" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#ffffff27" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#ffffff27" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#ffffff27" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                           <effect>
+                              <InnerShadow color="#0000008f" height="26.93" radius="6.2325" width="0.0" />
+                           </effect>
+                        </VBox>
+                        <Label prefHeight="33.0" prefWidth="250.0" text="Customer Management" textFill="#eeeeee">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
                      </children>
                      <effect>
                         <InnerShadow color="#00000071" height="0.0" radius="4.75" />
