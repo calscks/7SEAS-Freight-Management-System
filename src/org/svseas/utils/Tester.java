@@ -1,7 +1,7 @@
 package org.svseas.utils;
 
 /**
- * Codes by Seong Chee Ken on 15/01/2017, 13:10.
+ * Coded by Seong Chee Ken on 15/01/2017, 13:10.
  */
 public enum Tester {
     TEST_BUTTON("Button tested"),

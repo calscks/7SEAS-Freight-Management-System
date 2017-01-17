@@ -3,20 +3,21 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
-         <left>
-            <AnchorPane prefHeight="720.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+
+<BorderPane fx:id="main_root" prefHeight="700.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.svseas.controller.menu.Menu">
+   <left>
+      <ScrollPane hbarPolicy="NEVER" styleClass="edge-to-edge" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+         <content>
+            <AnchorPane prefHeight="755.0" prefWidth="250.0">
                <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #446CB3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox prefHeight="708.0" prefWidth="250.0" style="-fx-background-color: #446CB3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Label prefHeight="33.0" prefWidth="250.0" text="Client Management" textFill="#eeeeee">
                            <opaqueInsets>
@@ -29,19 +30,19 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <VBox prefHeight="139.0" prefWidth="250.0" style="-fx-background-color: #4183D7;">
+                        <VBox prefHeight="139.0" prefWidth="250.0" style="-fx-background-color: #3D8EB9;">
                            <children>
-                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" text="Register Client" textAlignment="CENTER" textFill="WHITE">
+                              <JFXButton fx:id="btn_client" buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" text="Manage Client" textAlignment="CENTER" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" text="Search Client" textFill="WHITE">
+                              <JFXButton fx:id="btn_clientShip" buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" text="Client Ships" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" text="Load Client" textFill="WHITE">
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" text="Button" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -69,12 +70,12 @@
                         </Label>
                         <VBox prefHeight="138.0" prefWidth="250.0" style="-fx-background-color: #EEEEEE;">
                            <children>
-                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#9c9c9c76" text="Load Routes" textAlignment="CENTER" textFill="#656464">
+                              <JFXButton fx:id="btn_port" buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#9c9c9c76" text="Manage Ports" textAlignment="CENTER" textFill="#656464">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#9c9c9c76" textAlignment="CENTER" textFill="#656464">
+                              <JFXButton fx:id="btn_route" buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#9c9c9c76" text="Manage Routes" textAlignment="CENTER" textFill="#656464">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -143,6 +144,23 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
+                        <VBox prefHeight="33.0" prefWidth="250.0" style="-fx-background-color: rgba(231, 76, 60,1.0);">
+                           <children>
+                              <JFXButton fx:id="btn_customer" buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#ffffff27" text="Manage Customers" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="250.0" ripplerFill="#ffffff27" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                           <effect>
+                              <InnerShadow color="#0000008f" height="26.93" radius="6.2325" width="0.0" />
+                           </effect>
+                        </VBox>
                      </children>
                      <effect>
                         <InnerShadow color="#00000071" height="0.0" radius="4.75" />
@@ -150,10 +168,7 @@
                   </VBox>
                </children>
             </AnchorPane>
-         </left>
-         <center>
-            <AnchorPane prefHeight="720.0" prefWidth="1025.0" style="-fx-background-color: rgba(236, 240, 241,1.0);" BorderPane.alignment="CENTER" />
-         </center>
-      </BorderPane>
-   </children>
-</StackPane>
+         </content>
+      </ScrollPane>
+   </left>
+</BorderPane>

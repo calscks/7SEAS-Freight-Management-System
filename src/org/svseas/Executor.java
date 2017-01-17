@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import org.svseas.utils.Initializer;
 
 /**
- * Codes by Seong Chee Ken on 14/11/2016, 23:03.
+ * Coded by Seong Chee Ken on 14/11/2016, 23:03.
  */
 public class Executor extends Application{
 

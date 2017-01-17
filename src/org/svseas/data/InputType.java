@@ -1,7 +1,7 @@
 package org.svseas.data;
 
 /**
- * Codes by Seong Chee Ken on 15/01/2017, 15:13.
+ * Coded by Seong Chee Ken on 15/01/2017, 15:13.
  */
 public enum InputType {
     USER("Username "),

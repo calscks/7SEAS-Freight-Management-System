@@ -1,10 +1,15 @@
 package org.svseas.data;
 
+import java.io.File;
+
 /**
- * Codes by Seong Chee Ken on 13/01/2017, 00:09.
+ * Coded by Seong Chee Ken on 13/01/2017, 00:09.
  */
 public enum DataFile {
-    ACCOUNT("useracc", "src/dat/account.xml");
+    CUSTOMER("Customer", "dat/customer.xml"),
+    ADMIN("Admin", "dat/admin.xml"),
+    CLIENT("Client", "dat/client.xml");
+
 
     private String data_name;
     private String data_path;
@@ -20,5 +25,10 @@ public enum DataFile {
 
     public String getData_path() {
         return data_path;
+    }
+
+    public static boolean analyse(DataFile dataFile){
+        File file = new File(dataFile.getData_path());
+        return file.exists();
     }
 }

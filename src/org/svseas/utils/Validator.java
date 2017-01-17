@@ -8,7 +8,7 @@ import de.jensd.fx.fontawesome.Icon;
 import org.svseas.data.InputType;
 
 /**
- * Codes by Seong Chee Ken on 15/01/2017, 14:15.
+ * Coded by Seong Chee Ken on 15/01/2017, 14:15.
  */
 public class Validator {
     private RequiredFieldValidator validator;

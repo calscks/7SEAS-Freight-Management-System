@@ -10,12 +10,13 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.namespace.QName;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
+import java.net.URISyntaxException;
 
 /**
- * Codes by Seong Chee Ken on 11/01/2017, 23:35. This operation class uses JAXB as the medium between objects and XML.
+ * Coded by Seong Chee Ken on 11/01/2017, 23:35. This operation class uses JAXB as the medium between objects and XML.
  */
 public class XMLOperation {
-    JAXBContext jaxbContext;
+    private JAXBContext jaxbContext;
 
     public XMLOperation(Class... classes) {
         try {

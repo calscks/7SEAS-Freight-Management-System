@@ -12,7 +12,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import org.svseas.data.InputType;
-import org.svseas.operations.AccountOperations;
+import org.svseas.data.UserType;
+import org.svseas.model.account.CustomerAccount;
+import org.svseas.operations.CustomerAccOperations;
 import org.svseas.utils.Tester;
 import org.svseas.utils.Validator;
 
@@ -21,7 +23,7 @@ import java.util.List;
 
 
 /**
- * Codes by Seong Chee Ken on 26/11/2016, 17:17.
+ * Coded by Seong Chee Ken on 26/11/2016, 17:17.
  */
 public class Login {
     @FXML
@@ -39,7 +41,7 @@ public class Login {
     @FXML
     JFXDialog dialog;
     @FXML
-    StackPane pane_root;
+    StackPane login_root;
     @FXML
     AnchorPane pane_Login;
     @FXML
@@ -51,9 +53,9 @@ public class Login {
 
     @FXML
     public void initialize() {
-        pane_root.getChildren().remove(dialog);
+        login_root.getChildren().remove(dialog);
         Font.loadFont(getClass().getResourceAsStream("/font/Aaargh.ttf"), 25);
-        pane_root.getStylesheets().add(Login.class.getResource("/resources/css/styles.css").toExternalForm());
+        login_root.getStylesheets().add(Login.class.getResource("/resources/css/styles.css").toExternalForm());
         List<Labeled> list = new ArrayList<>();
         list.add(lblFreight);
         list.add(lblMS);
@@ -76,9 +78,9 @@ public class Login {
                 if (username.equals("") || pwd.equals("")) {
                     event.consume();
                 } else {
-                    if (!AccountOperations.read(username, pwd)) {
+                    if (!CustomerAccOperations.read(username, pwd)) {
                         dialog.setTransitionType(JFXDialog.DialogTransition.CENTER);
-                        dialog.show(pane_root);
+                        dialog.show(login_root);
                         acceptButton.setOnMouseClicked((e)-> dialog.close());
                     }
                 }
