@@ -29,6 +29,6 @@ public enum DataFile {
 
     public static boolean analyse(DataFile dataFile){
         File file = new File(dataFile.getData_path());
-        return file.exists();
+        return file.isFile();
     }
 }

@@ -2,6 +2,7 @@ package org.svseas.operations;
 
 import org.svseas.data.DataFile;
 import org.svseas.model.ObjectList;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -29,7 +30,7 @@ public class XMLOperation {
     public void write(DataFile dataFile, ObjectList objectList) {
         try {
             Marshaller marshaller = jaxbContext.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             QName qName = new QName(dataFile.getData_name());
             JAXBElement<ObjectList> jaxbElement = new JAXBElement<>(qName, ObjectList.class, objectList);
             marshaller.marshal(jaxbElement, new File(dataFile.getData_path()));
@@ -45,6 +46,7 @@ public class XMLOperation {
             return unmarshaller.unmarshal(source, ObjectList.class).getValue();
         } catch (JAXBException e) {
             e.printStackTrace();
-        } return null;
+        }
+        return null;
     }
 }

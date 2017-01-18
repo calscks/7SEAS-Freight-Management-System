@@ -12,4 +12,11 @@ public class ClientManagement {
     @FXML private StackPane clientmgnt_root;
     @FXML private JFXButton btn_addClient, btn_refreshClient, btn_editClient, btn_delClient;
     @FXML private JFXTreeTableView table_client;
+
+    @FXML
+    public void initialize(){
+        btn_addClient.setOnMouseClicked(e->{
+
+        });
+    }
 }

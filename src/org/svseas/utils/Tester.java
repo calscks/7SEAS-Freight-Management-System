@@ -7,7 +7,9 @@ public enum Tester {
     TEST_BUTTON("Button tested"),
     TEST_FIELD("Field tested"),
     SUCCESS("Succeeded"),
-    FAIL("Failed");
+    SUCCESS_MATCH("Match successful"),
+    FAIL("Failed"),
+    FAIL_MATCH("Match failed");
 
 
     private String string;

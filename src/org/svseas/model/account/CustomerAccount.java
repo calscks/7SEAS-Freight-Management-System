@@ -8,12 +8,11 @@ import java.util.Objects;
  */
 
 @XmlRootElement
-public class CustomerAccount {
-    private String username, password, fullName, id;
+public class CustomerAccount extends Account{
+    private String fullName, id;
 
-    public CustomerAccount(String username, String password, String fullName, String id){
-        this.username = username;
-        this.password = password;
+    public CustomerAccount(String username, String password, String fullName, String id) {
+        super(username, password);
         this.fullName = fullName;
         this.id = id;
     }
@@ -28,22 +27,6 @@ public class CustomerAccount {
         this.fullName = fullName;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getId() {
         return id;
     }
@@ -54,13 +37,13 @@ public class CustomerAccount {
 
     @Override
     public boolean equals(Object o) {
-        return (o instanceof CustomerAccount) && (Objects.equals(((CustomerAccount) o).getUsername(), this.username));
+        return (o instanceof CustomerAccount) && (Objects.equals(((CustomerAccount) o).getUsername(), super.getUsername()));
     }
 
     @Override
     public int hashCode(){
         int result = 3;
-        result = 31 * username.hashCode();
+        result = 31 * super.getUsername().hashCode();
         return result;
     }
 }
