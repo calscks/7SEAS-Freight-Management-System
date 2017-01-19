@@ -6,10 +6,8 @@ import com.jfoenix.controls.JFXPasswordField;
 import java.util.Objects;
 
 public abstract class ParentController {
-    public boolean pwd_match(JFXPasswordField pass1, JFXPasswordField pass2){
-        if (Objects.equals(pass1.getText(), pass2.getText())){
-            return true;
-        } return false;
+    protected boolean pwd_match(JFXPasswordField pass1, JFXPasswordField pass2){
+        return Objects.equals(pass1.getText(), pass2.getText());
     }
 
     public abstract void add(JFXButton addButton);
