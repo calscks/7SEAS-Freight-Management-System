@@ -5,20 +5,19 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
-import org.svseas.controller.ParentController;
+import javafx.stage.Stage;
+import org.svseas.controller.AccountManipulator;
 import org.svseas.data.DataFile;
 import org.svseas.model.account.ClientAccount;
 import org.svseas.operations.AccountOperations;
 import org.svseas.utils.Dialogue;
 
-import java.util.List;
-
-
 /**
  * Coded by Seong Chee Ken on 19/01/2017, 00:29.
  */
-public class ClientAdd extends ParentController {
+public class ClientAdd extends AccountManipulator {
     @FXML
     private StackPane clientadd_root;
     @FXML
@@ -28,29 +27,45 @@ public class ClientAdd extends ParentController {
     @FXML
     private JFXPasswordField pwd, confirm_pwd;
     private String heading = "Password Not Match",
-            body = "Password does not match with each other. Please re-type the password.";
-    private AccountOperations<ClientAccount> clientops;
+            body = "Password does not match with each other. Please re-type the password.",
+            heading2 = "Username has been taken",
+            body2 = "Either the account has already been exists, or the username has been taken.\n" +
+                    "Please enter another unique username.";
     private ClientAccount client;
-    private BooleanBinding binding;
 
     @FXML
     public void initialize() {
-        binding = username.textProperty().isEmpty()
+        BooleanBinding binding = username.textProperty().isEmpty()
                 .or(pwd.textProperty().isEmpty())
                 .or(companyName.textProperty().isEmpty())
                 .or(registry_no.textProperty().isEmpty())
                 .or(phone_no.textProperty().isEmpty());
         btn_add.disableProperty().bind(binding);
+        manipulate(btn_add);
     }
 
-    public void add(JFXButton addButton) {
-        addButton.setOnMouseClicked(e -> {
-            if (!pwd_match(pwd, confirm_pwd)) new Dialogue(heading, body, clientadd_root, Dialogue.DialogueType.ACCEPT);
-            else {
+    public void manipulate(JFXButton button) {
+        button.setOnMouseClicked(e -> {
+            if (e.getButton().equals(MouseButton.PRIMARY)) {
                 client = new ClientAccount(username.getText(), pwd.getText(), companyName.getText(), registry_no.getText(), phone_no.getText());
-                clientops = new AccountOperations<>(client, DataFile.CLIENT);
-                clientops.create();
+                if (!pwd_match(pwd, confirm_pwd))
+                    new Dialogue(heading, body, clientadd_root, Dialogue.DialogueType.ACCEPT);
+                else if (!DataFile.analyse(DataFile.CLIENT)) {
+                    create(client);
+                } else if (acc_match(client, DataFile.CLIENT))
+                    new Dialogue(heading2, body2, clientadd_root, Dialogue.DialogueType.ACCEPT);
+                else {
+                    create(client);
+                }
             }
         });
     }
+
+    private void create(ClientAccount client){
+        AccountOperations<ClientAccount> clientops = new AccountOperations<>(client, DataFile.CLIENT);
+        clientops.create();
+        Stage thisStage = (Stage) clientadd_root.getScene().getWindow();
+        thisStage.close();
+    }
+
 }

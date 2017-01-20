@@ -28,6 +28,7 @@ public class Dialogue extends JFXDialog{
         this.body = body;
         this.root = root;
         this.dialogueType = dialogueType;
+        set();
     }
 
     private void set(){
@@ -42,13 +43,15 @@ public class Dialogue extends JFXDialog{
                 ok = new DialogueButton("OK");
                 ok.setOnMouseClicked(event -> this.close());
                 layout.setActions(ok);
+                break;
             case CONFIRMATION:
                 ok = new DialogueButton("Yes");
                 cancel = new DialogueButton("No");
                 cancel.setStyle("-fx-background-color: #D24D57;");
                 layout.setActions(ok,cancel);
+                break;
         }
-
+        this.setContent(layout);
         this.show(root);
     }
 

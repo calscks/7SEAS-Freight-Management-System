@@ -25,11 +25,5 @@ public class Initializer {
         AdminAccount adminAccount = new AdminAccount("admin", "admin", "Administrator");
         AccountOperations<AdminAccount> ops = new AccountOperations<>(adminAccount, DataFile.ADMIN);
         ops.create();
-        ClientAccount clientAccount = new ClientAccount("", "", "", "", "");
-        AccountOperations<ClientAccount> ops2 = new AccountOperations<>(clientAccount, DataFile.CLIENT);
-        ops2.create();
-        CustomerAccount customerAccount = new CustomerAccount("", "", "", "");
-        AccountOperations<CustomerAccount> ops3 = new AccountOperations<>(customerAccount, DataFile.CUSTOMER);
-        ops3.create();
     }
 }

@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
 <StackPane fx:id="custedit_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="432.0" style="-fx-background-color: rgba(236, 240, 241, 1.0);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.svseas.controller.customer.CustEdit">
    <children>
       <AnchorPane prefHeight="500.0" prefWidth="432.0">
@@ -23,16 +24,16 @@
                         <Font size="16.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="pwd" focusColor="#1c7eff" promptText="Password" unFocusColor="#75757585">
+                  <JFXPasswordField fx:id="pwd" focusColor="#1c7eff" promptText="Password" unFocusColor="#75757585">
                      <font>
                         <Font size="16.0" />
                      </font>
-                  </JFXTextField>
-                  <JFXTextField fx:id="confirm_pwd" focusColor="#1c7eff" promptText="Confirm password" unFocusColor="#75757585">
+                  </JFXPasswordField>
+                  <JFXPasswordField fx:id="confirm_pwd" focusColor="#1c7eff" promptText="Confirm password" unFocusColor="#75757585">
                      <font>
                         <Font size="16.0" />
                      </font>
-                  </JFXTextField>
+                  </JFXPasswordField>
                   <JFXTextField fx:id="id_no" focusColor="#1c7eff" promptText="ID number" unFocusColor="#75757585">
                      <font>
                         <Font size="16.0" />

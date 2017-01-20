@@ -19,6 +19,9 @@ public class AccountOperations<T> {
     public AccountOperations(Account account, DataFile df) {
         this.account = account;
         this.df = df;
+        if (account instanceof AdminAccount) xmlops = new XMLOperation(ObjectList.class, AdminAccount.class);
+        else if (account instanceof CustomerAccount) xmlops = new XMLOperation(ObjectList.class, CustomerAccount.class);
+        else if (account instanceof ClientAccount) xmlops = new XMLOperation(ObjectList.class, ClientAccount.class);
     }
 
     public AccountOperations(DataFile df) {
@@ -28,22 +31,8 @@ public class AccountOperations<T> {
         else if (df == DataFile.CLIENT) xmlops = new XMLOperation(ObjectList.class, ClientAccount.class);
     }
 
-    public boolean create() {
-        if (account instanceof AdminAccount) {
-            xmlops = new XMLOperation(ObjectList.class, AdminAccount.class);
-            creation();
-        } else if (account instanceof CustomerAccount) {
-            xmlops = new XMLOperation(ObjectList.class, CustomerAccount.class);
-            creation();
-        } else if (account instanceof ClientAccount){
-            xmlops = new XMLOperation(ObjectList.class, ClientAccount.class);
-            creation();
-        }
-        return false;
-    }
-
     @SuppressWarnings("unchecked")
-    private boolean creation() {
+    public boolean create() {
         if (!DataFile.analyse(df)) {
             ObjectList<T> accountList = new ObjectList<>();
             accountList.add((T) account);
@@ -84,6 +73,31 @@ public class AccountOperations<T> {
             } else if (account instanceof ClientAccount) {
                 if (((ClientAccount) account).getUsername().equals(username) && ((ClientAccount) account)
                         .getPassword().equals(password)) {
+                    Tester.SUCCESS_MATCH.printer();
+                    return true;
+                }
+            }
+        }
+        Tester.FAIL_MATCH.printer();
+        return false;
+    }
+
+    @SuppressWarnings("unchecked")
+    public boolean read(String username) {
+        ObjectList<T> list = (ObjectList<T>) xmlops.read(df);
+        for (T account : list.getList()) {
+            if (account instanceof AdminAccount) {
+                if (((AdminAccount) account).getUsername().equals(username)){
+                    Tester.SUCCESS_MATCH.printer();
+                    return true;
+                }
+            } else if (account instanceof CustomerAccount) {
+                if (((CustomerAccount) account).getUsername().equals(username)) {
+                    Tester.SUCCESS_MATCH.printer();
+                    return true;
+                }
+            } else if (account instanceof ClientAccount) {
+                if (((ClientAccount) account).getUsername().equals(username)) {
                     Tester.SUCCESS_MATCH.printer();
                     return true;
                 }
