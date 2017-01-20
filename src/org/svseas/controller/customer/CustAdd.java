@@ -52,20 +52,13 @@ public class CustAdd extends AccountManipulator {
                 if (!pwd_match(pwd, confirm_pwd))
                     new Dialogue(heading, body, custadd_root, Dialogue.DialogueType.ACCEPT);
                 else if (!DataFile.analyse(df)) {
-                    create(customer);
+                    create(customer, custadd_root, df);
                 } else if (acc_match(customer, df))
                     new Dialogue(heading2, body2, custadd_root, Dialogue.DialogueType.ACCEPT);
                 else {
-                    create(customer);
+                    create(customer, custadd_root, df);
                 }
             }
         });
-    }
-
-    private void create(CustomerAccount customer){
-        custops = new AccountOperations<>(customer, df);
-        custops.create();
-        Stage thisStage = (Stage) custadd_root.getScene().getWindow();
-        thisStage.close();
     }
 }

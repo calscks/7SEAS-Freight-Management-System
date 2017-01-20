@@ -6,6 +6,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.svseas.data.DataFile;
 import org.svseas.model.account.Account;
+import org.svseas.model.account.ClientAccount;
+import org.svseas.model.account.CustomerAccount;
 import org.svseas.operations.AccountOperations;
 
 import java.util.Objects;
@@ -19,6 +21,20 @@ public abstract class AccountManipulator{
     protected boolean acc_match(Account account, DataFile dataFile){
         AccountOperations<Account> accops = new AccountOperations<>(account, dataFile);
         return accops.read(account.getUsername());
+    }
+
+    @SuppressWarnings("unchecked")
+    protected <T> void create (T account, Pane pane, DataFile dataFile){
+        AccountOperations<T> ops;
+        if (account instanceof CustomerAccount) {
+            ops = new AccountOperations((CustomerAccount) account, dataFile);
+            ops.create();
+        } else if (account instanceof ClientAccount) {
+            ops = new AccountOperations<>((ClientAccount) account, dataFile);
+            ops.create();
+        }
+        Stage thisStage = (Stage) pane.getScene().getWindow();
+        thisStage.close();
     }
 
     //manipulation means add or edit (update). Hence the button shall be add/edit button assigned to the controller.

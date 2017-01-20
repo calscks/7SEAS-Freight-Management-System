@@ -51,21 +51,14 @@ public class ClientAdd extends AccountManipulator {
                 if (!pwd_match(pwd, confirm_pwd))
                     new Dialogue(heading, body, clientadd_root, Dialogue.DialogueType.ACCEPT);
                 else if (!DataFile.analyse(DataFile.CLIENT)) {
-                    create(client);
+                    create(client, clientadd_root, DataFile.CLIENT);
                 } else if (acc_match(client, DataFile.CLIENT))
                     new Dialogue(heading2, body2, clientadd_root, Dialogue.DialogueType.ACCEPT);
                 else {
-                    create(client);
+                    create(client, clientadd_root, DataFile.CLIENT);
                 }
             }
         });
-    }
-
-    private void create(ClientAccount client){
-        AccountOperations<ClientAccount> clientops = new AccountOperations<>(client, DataFile.CLIENT);
-        clientops.create();
-        Stage thisStage = (Stage) clientadd_root.getScene().getWindow();
-        thisStage.close();
     }
 
 }
