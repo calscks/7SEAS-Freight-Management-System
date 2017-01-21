@@ -22,6 +22,11 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$MODULE_DIR$/lib/jfoenix.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jfoenix.jar!/com" />
+          <root url="file://$MODULE_DIR$/../../JFoenix/demo" />
+          <root url="file://$MODULE_DIR$/../../JFoenix/src" />
+          <root url="file://$MODULE_DIR$/../../JFoenix/subprojects/jfoenix/build/dalvik-sdk/samples/HelloWorld/javafx/src/main/java" />
+          <root url="file://$MODULE_DIR$/../../JFoenix/subprojects/jfoenix/build/tmp/expandedArchives/dalvik-sdk-8.60.6.zip_a5zqe99cewthls27wecppac4w/dalvik-sdk/samples/HelloWorld/javafx/src/main/java" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -7,11 +7,9 @@ import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 import org.svseas.controller.AccountManipulator;
 import org.svseas.data.DataFile;
 import org.svseas.model.account.CustomerAccount;
-import org.svseas.operations.AccountOperations;
 import org.svseas.utils.Dialogue;
 
 /**
@@ -31,7 +29,6 @@ public class CustAdd extends AccountManipulator {
             heading2 = "Username has been taken",
             body2 = "Either the account has already been exists, or the username has been taken.\n" +
                     "Please enter another unique username.";
-    private AccountOperations<CustomerAccount> custops;
     private CustomerAccount customer;
     private DataFile df = DataFile.CUSTOMER;
 
@@ -44,6 +41,8 @@ public class CustAdd extends AccountManipulator {
         btn_add.disableProperty().bind(binding);
         manipulate(btn_add);
     }
+
+    public <T> void initData(T type){} //nothing to init
 
     public void manipulate(JFXButton button) {
         button.setOnMouseClicked(e -> {

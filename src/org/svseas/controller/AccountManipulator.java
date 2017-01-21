@@ -24,13 +24,13 @@ public abstract class AccountManipulator{
     }
 
     @SuppressWarnings("unchecked")
-    protected <T> void create (T account, Pane pane, DataFile dataFile){
+    protected <T extends Account> void create (T account, Pane pane, DataFile dataFile){
         AccountOperations<T> ops;
         if (account instanceof CustomerAccount) {
-            ops = new AccountOperations((CustomerAccount) account, dataFile);
+            ops = new AccountOperations(account, dataFile);
             ops.create();
         } else if (account instanceof ClientAccount) {
-            ops = new AccountOperations<>((ClientAccount) account, dataFile);
+            ops = new AccountOperations<>(account, dataFile);
             ops.create();
         }
         Stage thisStage = (Stage) pane.getScene().getWindow();
@@ -40,4 +40,7 @@ public abstract class AccountManipulator{
     //manipulation means add or edit (update). Hence the button shall be add/edit button assigned to the controller.
     //delete is only available on the main management menus so it'll be not included here.
     public abstract void manipulate(JFXButton button);
+
+    //initData must be used for params passing such as during editing (passing params to different stage)
+    public abstract <T> void initData(T type);
 }

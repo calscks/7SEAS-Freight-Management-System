@@ -3,14 +3,12 @@ package org.svseas.controller.menu;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import org.svseas.utils.Tester;
 
 import java.io.IOException;
-import java.util.Objects;
 
 /**
  * Coded by Seong Chee Ken on 27/11/2016, 18:14.
@@ -26,6 +24,7 @@ public class Menu {
     public void initialize() throws IOException {
         clientMgntPane = FXMLLoader.load(getClass().getResource("/org/svseas/view/ClientManagement.fxml"));
         main_root.setCenter(clientMgntPane);
+        main_root.getStylesheets().add(Menu.class.getResource("/css/styles.css").toExternalForm());
         new ButtonController(btn_client, "/org/svseas/view/ClientManagement.fxml", main_root);
         new ButtonController(btn_customer, "/org/svseas/view/CustManagement.fxml", main_root);
     }

@@ -16,7 +16,7 @@ public class Executor extends Application{
     public void start(Stage primaryStage) throws Exception {
         new Initializer();
 
-        Parent root = FXMLLoader.load(getClass().getResource("/org/svseas/view/CustAdd.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/org/svseas/view/ClientManagement.fxml"));
         Scene scene = new Scene(root);
 
         primaryStage.setTitle("7SEAS Freight Management System");

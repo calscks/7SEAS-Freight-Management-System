@@ -8,8 +8,10 @@ public enum Tester {
     TEST_FIELD("Field tested"),
     SUCCESS("Succeeded"),
     SUCCESS_MATCH("Match successful"),
+    SUCCESS_READ("Read successful"),
     FAIL("Failed"),
-    FAIL_MATCH("Match failed");
+    FAIL_MATCH("Match failed"),
+    FAIL_READ("Read failed"),;
 
 
     private String string;

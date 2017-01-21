@@ -14,6 +14,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.svseas.data.DataFile;
 import org.svseas.data.InputType;
@@ -100,6 +101,8 @@ public class Login {
                             Scene scene = new Scene(root);
                             Stage stage = new Stage();
                             stage.setScene(scene);
+                            stage.initModality(Modality.WINDOW_MODAL);
+                            stage.initOwner(stage.getScene().getWindow());
                             stage.setTitle("7SEAS Freight Management System");
                             stage.show();
                             Stage prevStage = (Stage) pane_Login.getScene().getWindow();
