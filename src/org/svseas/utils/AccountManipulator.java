@@ -1,4 +1,4 @@
-package org.svseas.controller;
+package org.svseas.utils;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -12,7 +12,9 @@ import org.svseas.operations.AccountOperations;
 
 import java.util.Objects;
 
-//abstract class for controllers which need to manipulate accounts
+/**
+ * Coded by Seong Chee Ken. Abstract class for controllers which need to manipulate accounts
+ */
 public abstract class AccountManipulator{
     protected boolean pwd_match(JFXPasswordField pass1, JFXPasswordField pass2){
         return Objects.equals(pass1.getText(), pass2.getText());

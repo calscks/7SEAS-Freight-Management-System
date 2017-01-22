@@ -101,8 +101,6 @@ public class Login {
                             Scene scene = new Scene(root);
                             Stage stage = new Stage();
                             stage.setScene(scene);
-                            stage.initModality(Modality.WINDOW_MODAL);
-                            stage.initOwner(stage.getScene().getWindow());
                             stage.setTitle("7SEAS Freight Management System");
                             stage.show();
                             Stage prevStage = (Stage) pane_Login.getScene().getWindow();

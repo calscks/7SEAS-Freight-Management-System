@@ -1,12 +1,12 @@
 package org.svseas.model;
 
-/**
- * Coded by Seong Chee Ken on 11/01/2017, 23:11. ObjectList for arraylist type T.
- */
-
 import javax.xml.bind.annotation.XmlAnyElement;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Coded by Seong Chee Ken on 11/01/2017, 23:11. ObjectList for arraylist type T.
+ */
 
 public class ObjectList<T> {
     private List<T> list;

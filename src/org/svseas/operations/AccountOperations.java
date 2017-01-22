@@ -1,6 +1,5 @@
 package org.svseas.operations;
 
-import javafx.application.Platform;
 import javafx.concurrent.Task;
 import org.svseas.data.DataFile;
 import org.svseas.model.ObjectList;
@@ -110,12 +109,10 @@ public class AccountOperations<T extends Account> {
             if (accounts.getUsername().equals(username)) {
                 accountList.remove((T) accounts);
                 accountList.add((T) account);
-                xmlops.write(df, accountList);
-                Tester.SUCCESS.printer();
-                return true;
             }
         }
-        Tester.FAIL.printer();
+        xmlops.write(df, accountList);
+        Tester.SUCCESS.printer();
         return false;
     }
 

@@ -94,4 +94,39 @@
     -fx-padding: 5 0 5 0;
 }
 
+.scroll-bar:vertical>.track-background, .scroll-bar:horizontal>.track-background{
+    -fx-background-color: #F1F1F1;
+    -fx-background-insets: 0.0;
+}
+
+.scroll-bar:vertical>.thumb, .scroll-bar:horizontal>.thumb {
+    -fx-background-color: #BCBCBC;
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 2em;
+}
+
+.scroll-bar>.increment-button, .scroll-bar>.decrement-button{
+    -fx-padding:5 1 5 1;
+}
+
+.scroll-bar>.increment-button, .scroll-bar>.decrement-button,.scroll-bar:hover>.increment-button, .scroll-bar:hover>.decrement-button{
+    -fx-background-color: transparent;
+}
+
+.scroll-bar>.increment-button>.increment-arrow, .scroll-bar>.decrement-button>.decrement-arrow{
+    -fx-background-color: rgba(17,64,157,0.64);
+}
+.scroll-bar>.increment-button>.increment-arrow{
+    -fx-shape: "";
+    -fx-padding:0;
+}
+.scroll-bar>.decrement-button>.decrement-arrow{
+    -fx-shape: "";
+    -fx-padding:0;
+}
+
+.combo-box{
+    -fx-font-size: 16;
+}
+
 /* css by JFoenix, modified for personal use.
