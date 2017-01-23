@@ -8,7 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import org.svseas.model.table.Preview;
-import org.svseas.utils.Manipulator;
+import org.svseas.utils.manipulator.Manipulator;
 
 import java.util.Arrays;
 import java.util.List;

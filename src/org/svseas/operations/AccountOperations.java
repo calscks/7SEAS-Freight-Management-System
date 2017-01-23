@@ -13,7 +13,7 @@ import org.svseas.utils.Tester;
  * Coded by Seong Chee Ken on 18/01/2017, 15:58. Proper CRUD operations for customer, client and admin.
  * Mostly CRUD operations for customer and client.
  */
-public class AccountOperations<T extends Account> {
+public class AccountOperations<T extends Account> extends Operation {
     private XMLOperation xmlops;
     private Account account;
     private DataFile df;
@@ -49,8 +49,8 @@ public class AccountOperations<T extends Account> {
             Tester.SUCCESS.printer();
             return true;
         }
-        for (T admin : accountList.getList()) {
-            if (!admin.equals(account)) {
+        for (T accounts : accountList.getList()) {
+            if (!accounts.equals(account)) {
                 accountList.add((T) account);
                 xmlops.write(df, accountList);
                 Tester.SUCCESS.printer();
@@ -93,17 +93,13 @@ public class AccountOperations<T extends Account> {
     //normal read
     @SuppressWarnings("unchecked")
     public ObjectList<T> read() {
-        if (DataFile.analyse(df)) {
-            ObjectList<T> list = (ObjectList<T>) xmlops.read(df);
-            Tester.SUCCESS_READ.printer();
-            return list;
-        } else Tester.FAIL_READ.printer();
-        return null;
+        return super.read(df, xmlops);
     }
 
     //admin is not necessary anymore, update is done for client and customer only
     @SuppressWarnings("unchecked")
-    public boolean update(String username) {
+    @Override
+    public void update(String username) {
         ObjectList<T> accountList = (ObjectList<T>) xmlops.read(df);
         for (Account accounts : accountList.getList()) {
             if (accounts.getUsername().equals(username)) {
@@ -113,7 +109,6 @@ public class AccountOperations<T extends Account> {
         }
         xmlops.write(df, accountList);
         Tester.SUCCESS.printer();
-        return false;
     }
 
     //MY PROGRAM IS FORCING ME TO DO MULTI-THREADING NOW OR ELSE IT'LL THROW CONCURRENCY EXCEPTION
@@ -143,4 +138,6 @@ public class AccountOperations<T extends Account> {
         xmlops.write(df, accountList);
         return true;
     }
+
+
 }

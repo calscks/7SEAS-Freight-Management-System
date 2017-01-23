@@ -18,7 +18,7 @@ import org.svseas.model.ship.Ship;
 import org.svseas.model.table.Preview;
 import org.svseas.operations.ShipOperations;
 import org.svseas.utils.Previewer;
-import org.svseas.utils.ShipManipulator;
+import org.svseas.utils.manipulator.ShipManipulator;
 
 /**
  * Coded by Seong Chee Ken on 22/01/2017, 17:20.
@@ -48,6 +48,7 @@ public class ShipEdit extends ShipManipulator {
     @FXML
     @SuppressWarnings("Duplicates")
     public void initialize(){
+        ship_id.setDisable(true);
         loadCountries(cbox_country);
         loadUsername(cbox_username);
         loadType(cbox_shipType);

@@ -16,7 +16,7 @@ import org.svseas.data.LeaseType;
 import org.svseas.model.ship.Ship;
 import org.svseas.model.table.Preview;
 import org.svseas.utils.Previewer;
-import org.svseas.utils.ShipManipulator;
+import org.svseas.utils.manipulator.ShipManipulator;
 
 /**
  * Coded by Seong Chee Ken on 22/01/2017, 17:20.

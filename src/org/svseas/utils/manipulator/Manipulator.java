@@ -1,4 +1,4 @@
-package org.svseas.utils;
+package org.svseas.utils.manipulator;
 
 /**
  * Coded by Seong Chee Ken on 23/01/2017, 17:08.

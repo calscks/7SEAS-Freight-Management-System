@@ -85,19 +85,18 @@ public class ShipManagement {
 
         populate();
 
-        //TODO: check whether it's runnable or not lol
         field_shipSearch.textProperty().addListener((observable, oldValue, newValue) -> new Task<Void>() {
             @Override
             protected Void call() throws Exception {
                 Platform.runLater(() -> table_ship.setPredicate(shipItem ->
                         shipItem.getValue().getUsername().contains(newValue) ||
-                        shipItem.getValue().getValue().contains(newValue) ||
-                        shipItem.getValue().getLeaseType().contains(newValue) ||
-                        shipItem.getValue().getShip_id().contains(newValue) ||
-                        shipItem.getValue().getCountry().contains(newValue) ||
-                        shipItem.getValue().getMaxLoad().contains(newValue) ||
-                        shipItem.getValue().getType().contains(newValue) ||
-                        shipItem.getValue().getPeriod().contains(newValue)
+                                shipItem.getValue().getValue().contains(newValue) ||
+                                shipItem.getValue().getLeaseType().contains(newValue) ||
+                                shipItem.getValue().getShip_id().contains(newValue) ||
+                                shipItem.getValue().getCountry().contains(newValue) ||
+                                shipItem.getValue().getMaxLoad().contains(newValue) ||
+                                shipItem.getValue().getType().contains(newValue) ||
+                                shipItem.getValue().getPeriod().contains(newValue)
                 ));
                 return null;
             }
@@ -107,8 +106,8 @@ public class ShipManagement {
         adder.operate();
 
         btn_editShip.setOnMouseClicked(event -> {
-            if (event.getButton().equals(MouseButton.PRIMARY)){
-                if (table_ship.getSelectionModel().isEmpty()){
+            if (event.getButton().equals(MouseButton.PRIMARY)) {
+                if (table_ship.getSelectionModel().isEmpty()) {
                     Dialogue dialogue = new Dialogue("Ship Not Selected",
                             "Ship is not selected. Please select a ship from the table to edit.",
                             ship_root, Dialogue.DialogueType.ACCEPT);
@@ -117,11 +116,11 @@ public class ShipManagement {
                     ShipInTable shipInTable = table_ship.getSelectionModel().getSelectedItem().getValue();
                     ShipOperations ops = new ShipOperations();
                     ObjectList<Ship> shipList = ops.read();
-                    for (Ship ship : shipList.getList()){
-                        if (Objects.equals(shipInTable.getShip_id(), ship.getShip_id())){
+                    for (Ship ship : shipList.getList()) {
+                        if (Objects.equals(shipInTable.getShip_id(), ship.getShip_id())) {
                             ButtonStageShow editor = new ButtonStageShow("/org/svseas/view/ShipEdit.fxml",
                                     "Edit Ship");
-                            editor.<Ship, ShipEdit> operate(ship);
+                            editor.<Ship, ShipEdit>operate(ship);
                         }
                     }
                 }
@@ -133,8 +132,8 @@ public class ShipManagement {
         });
 
         btn_viewDetails.setOnMouseClicked(event -> {
-            if (event.getButton().equals(MouseButton.PRIMARY)){
-                if (table_ship.getSelectionModel().isEmpty()){
+            if (event.getButton().equals(MouseButton.PRIMARY)) {
+                if (table_ship.getSelectionModel().isEmpty()) {
                     Dialogue dialogue = new Dialogue("Ship Not Selected",
                             "Ship is not selected. Please select a ship from the table to view its details.",
                             ship_root, Dialogue.DialogueType.ACCEPT);
@@ -143,11 +142,11 @@ public class ShipManagement {
                     ShipInTable shipInTable = table_ship.getSelectionModel().getSelectedItem().getValue();
                     ShipOperations ops = new ShipOperations();
                     ObjectList<Ship> shipList = ops.read();
-                    for (Ship ship : shipList.getList()){
-                        if (Objects.equals(shipInTable.getShip_id(), ship.getShip_id())){
+                    for (Ship ship : shipList.getList()) {
+                        if (Objects.equals(shipInTable.getShip_id(), ship.getShip_id())) {
                             ButtonStageShow viewer = new ButtonStageShow("/org/svseas/view/ShipMoreDetails.fxml",
                                     "Ship Details");
-                            viewer.<Ship, ShipDetails> operate(ship);
+                            viewer.<Ship, ShipDetails>operate(ship);
                         }
                     }
                 }
@@ -155,8 +154,8 @@ public class ShipManagement {
         });
 
         btn_delShip.setOnMouseClicked(event -> {
-            if (event.getButton().equals(MouseButton.PRIMARY)){
-                if (table_ship.getSelectionModel().isEmpty()){
+            if (event.getButton().equals(MouseButton.PRIMARY)) {
+                if (table_ship.getSelectionModel().isEmpty()) {
                     Dialogue dialogue = new Dialogue("Ship Not Selected",
                             "Ship is not selected. Please select a ship from the table to delete.",
                             ship_root, Dialogue.DialogueType.ACCEPT);
@@ -180,9 +179,9 @@ public class ShipManagement {
                     ship.getMaxLoad(), ship.getValue(), ship.getCountry(), ship.getPeriod(),
                     ship.getLeaseType().toString());
             shipInTables.add(shipInTable);
+            table_ship.setRoot(new RecursiveTreeItem<>(shipInTables, RecursiveTreeObject::getChildren));
+            table_ship.setShowRoot(false);
         }
-        table_ship.setRoot(new RecursiveTreeItem<>(shipInTables, RecursiveTreeObject::getChildren));
-        table_ship.setShowRoot(false);
     }
 
 }

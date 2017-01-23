@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import org.svseas.utils.AccountManipulator;
+import org.svseas.utils.manipulator.AccountManipulator;
 import org.svseas.data.DataFile;
 import org.svseas.model.account.ClientAccount;
 import org.svseas.operations.AccountOperations;

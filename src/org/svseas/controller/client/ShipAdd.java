@@ -19,7 +19,7 @@ import org.svseas.model.table.Preview;
 import org.svseas.operations.ShipOperations;
 import org.svseas.utils.Dialogue;
 import org.svseas.utils.Previewer;
-import org.svseas.utils.ShipManipulator;
+import org.svseas.utils.manipulator.ShipManipulator;
 
 /**
  * Coded by Seong Chee Ken on 22/01/2017, 17:20.

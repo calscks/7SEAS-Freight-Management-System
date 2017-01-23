@@ -18,7 +18,7 @@
    <children>
       <AnchorPane prefHeight="592.0" prefWidth="850.0">
          <children>
-            <VBox alignment="CENTER_LEFT" layoutX="84.0" layoutY="34.0" prefHeight="157.0" prefWidth="324.0" spacing="14.0" style="fx-border-color: #dddddd;">
+            <VBox alignment="CENTER_LEFT" disable="true" layoutX="84.0" layoutY="34.0" prefHeight="157.0" prefWidth="324.0" spacing="14.0" style="fx-border-color: #dddddd;">
                <children>
                   <JFXTextField fx:id="ship_id" focusColor="#1c7eff" promptText="Ship ID" unFocusColor="#75757585">
                      <font>
@@ -45,7 +45,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </JFXButton>
-            <VBox alignment="CENTER_LEFT" layoutX="443.0" layoutY="34.0" prefHeight="100.0" prefWidth="324.0" spacing="14.0">
+            <VBox alignment="CENTER_LEFT" disable="true" layoutX="443.0" layoutY="34.0" prefHeight="100.0" prefWidth="324.0" spacing="14.0">
                <children>
                   <JFXTextField fx:id="max_load" focusColor="#1c7eff" promptText="Maximum load (in metric ton)" unFocusColor="#75757585">
                      <font>
@@ -64,7 +64,7 @@
                   </JFXComboBox>
                </children>
             </VBox>
-            <JFXRadioButton fx:id="radio_contract" layoutX="84.0" layoutY="191.0" prefHeight="43.0" prefWidth="164.0" text="Contract Hire">
+            <JFXRadioButton fx:id="radio_contract" disable="true" layoutX="84.0" layoutY="191.0" prefHeight="43.0" prefWidth="164.0" text="Contract Hire">
                <font>
                   <Font size="16.0" />
                </font>
@@ -72,14 +72,14 @@
                   <ToggleGroup fx:id="lease_type" />
                </toggleGroup>
             </JFXRadioButton>
-            <JFXRadioButton fx:id="radio_operating" layoutX="443.0" layoutY="191.0" prefHeight="43.0" prefWidth="164.0" text="Operating Leasing" toggleGroup="$lease_type">
+            <JFXRadioButton fx:id="radio_operating" disable="true" layoutX="443.0" layoutY="191.0" prefHeight="43.0" prefWidth="164.0" text="Operating Leasing" toggleGroup="$lease_type">
                <font>
                   <Font size="16.0" />
                </font>
             </JFXRadioButton>
             <JFXDrawer fx:id="drawer_contract" layoutX="84.0" layoutY="246.0" prefHeight="249.0" prefWidth="324.0" style="-fx-border-color: #dddddd;">
                <children>
-                  <VBox  alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                  <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <JFXButton fx:id="btn_conPreview" alignment="CENTER" prefHeight="0.0" prefWidth="90.0" ripplerFill="#adadad86" text="Preview..." textFill="#389a3d">
                            <font>

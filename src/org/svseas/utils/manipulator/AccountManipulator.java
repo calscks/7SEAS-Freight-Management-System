@@ -1,4 +1,4 @@
-package org.svseas.utils;
+package org.svseas.utils.manipulator;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;

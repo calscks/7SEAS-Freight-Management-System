@@ -1,4 +1,4 @@
-package org.svseas.utils;
+package org.svseas.utils.manipulator;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -18,6 +18,8 @@ import org.svseas.model.ship.Ship;
 import org.svseas.model.table.Preview;
 import org.svseas.operations.AccountOperations;
 import org.svseas.operations.ShipOperations;
+import org.svseas.utils.AutoCompleteCBoxListener;
+import org.svseas.utils.Tester;
 
 import java.time.LocalDate;
 import java.util.Locale;
