@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="ship_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1030.0" style="-fx-background-color: rgba(236, 240, 241, 1.0);" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.svseas.controller.client.ShipManagement">
+<StackPane fx:id="ship_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1030.0" style="-fx-background-color: rgba(236, 240, 241, 1.0);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.svseas.controller.client.ShipManagement">
     <children>
         <AnchorPane prefHeight="700.0" prefWidth="1030.0">
             <children>
@@ -19,9 +19,10 @@
                         <JFXTreeTableColumn fx:id="username" minWidth="135.0" prefWidth="135.0" text="Client's Username" />
                         <JFXTreeTableColumn fx:id="ship_id" minWidth="135.0" text="Ship ID" />
                         <JFXTreeTableColumn fx:id="ship_type" minWidth="135.0" text="Ship Type" />
-                  <JFXTreeTableColumn fx:id="ship_country" minWidth="135.0" text="Ship ID" />
-                  <JFXTreeTableColumn fx:id="max_load" minWidth="135.0" text="Ship ID" />
+                  <JFXTreeTableColumn fx:id="ship_country" minWidth="135.0" text="Country" />
+                  <JFXTreeTableColumn fx:id="max_load" minWidth="135.0" text="Maximum Load (T)" />
                   <JFXTreeTableColumn fx:id="leasing_type" minWidth="135.0" text="Contract Type" />
+                  <JFXTreeTableColumn fx:id="leasing_period" minWidth="135.0" text="Leasing Period (Year)" />
                     </columns>
                     <columnResizePolicy>
                         <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

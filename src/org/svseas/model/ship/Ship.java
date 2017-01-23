@@ -2,23 +2,29 @@ package org.svseas.model.ship;
 
 import org.svseas.data.LeaseType;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Coded by Seong Chee Ken on 22/01/2017, 17:56.
  */
+@XmlRootElement
 public class Ship {
-    private String ship_id, username, type, maxLoad, value, country, amount;
+    private String ship_id, username, type, maxLoad, value, country, period;
     private LeaseType leaseType;
 
     public Ship(String ship_id, String username, String type, String maxLoad,
-                String value, String country, String amount, LeaseType leaseType) {
+                String value, String country, String period, LeaseType leaseType) {
         this.ship_id = ship_id;
         this.username = username;
         this.type = type;
         this.maxLoad = maxLoad;
         this.value = value;
         this.country = country;
-        this.amount = amount;
+        this.period = period;
         this.leaseType = leaseType;
+    }
+
+    public Ship() {
     }
 
     public String getShip_id() {
@@ -69,12 +75,12 @@ public class Ship {
         this.country = country;
     }
 
-    public String getAmount() {
-        return amount;
+    public String getPeriod() {
+        return period;
     }
 
-    public void setAmount(String amount) {
-        this.amount = amount;
+    public void setPeriod(String period) {
+        this.period = period;
     }
 
     public LeaseType getLeaseType() {

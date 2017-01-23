@@ -77,18 +77,9 @@
                   <Font size="16.0" />
                </font>
             </JFXRadioButton>
-            <JFXDrawer fx:id="drawer_contract" disable="true" layoutX="84.0" layoutY="246.0" prefHeight="249.0" prefWidth="324.0" style="-fx-border-color: #dddddd;">
+            <JFXDrawer fx:id="drawer_contract" alignment="BOTTOM_RIGHT" disable="true" layoutX="84.0" layoutY="246.0" prefHeight="249.0" prefWidth="324.0" style="-fx-border-color: #dddddd;">
                <children>
-                  <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <JFXButton fx:id="btn_conPreview" alignment="CENTER" prefHeight="0.0" prefWidth="90.0" ripplerFill="#adadad86" text="Preview..." textFill="#389a3d">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXButton>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="157.0" prefWidth="324.0" spacing="14.0" style="fx-border-color: #dddddd;">
+                  <VBox alignment="BOTTOM_RIGHT" prefHeight="157.0" prefWidth="324.0" spacing="14.0" style="fx-border-color: #dddddd;">
                      <children>
                         <JFXTextField fx:id="contract_period" focusColor="#1c7eff" promptText="Contract Period (Year): Must be &gt; 2" unFocusColor="#75757585">
                            <font>
@@ -171,21 +162,17 @@
                               </VBox>
                            </children>
                         </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </JFXDrawer>
-            <JFXDrawer fx:id="drawer_operating" disable="true" layoutX="443.0" layoutY="246.0" prefHeight="249.0" prefWidth="324.0" style="-fx-border-color: #dddddd;">
-               <children>
-                  <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <JFXButton fx:id="btn_oprPreview" alignment="CENTER" prefHeight="0.0" prefWidth="90.0" ripplerFill="#adadad86" text="Preview..." textFill="#389a3d">
+                        <JFXButton fx:id="btn_conPreview" alignment="CENTER" prefHeight="0.0" prefWidth="90.0" ripplerFill="#adadad86" text="Preview..." textFill="#389a3d">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
                      </children>
                   </VBox>
+               </children>
+            </JFXDrawer>
+            <JFXDrawer fx:id="drawer_operating" alignment="BOTTOM_RIGHT" disable="true" layoutX="443.0" layoutY="246.0" prefHeight="249.0" prefWidth="324.0" style="-fx-border-color: #dddddd;">
+               <children>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <JFXComboBox fx:id="cbox_contractPeriod" editable="true" prefHeight="43.0" prefWidth="349.0" promptText="Contract Period (Year)">
@@ -255,6 +242,11 @@
                         </HBox>
                      </children>
                   </VBox>
+                  <JFXButton fx:id="btn_oprPreview" alignment="CENTER" prefHeight="0.0" prefWidth="90.0" ripplerFill="#adadad86" text="Preview..." textFill="#389a3d">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
                </children>
             </JFXDrawer>
             <VBox prefHeight="200.0" prefWidth="100.0" />

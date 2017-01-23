@@ -15,7 +15,7 @@ import java.util.Objects;
 /**
  * Coded by Seong Chee Ken. Abstract class for controllers which need to manipulate accounts
  */
-public abstract class AccountManipulator{
+public abstract class AccountManipulator extends Manipulator{
     protected boolean pwd_match(JFXPasswordField pass1, JFXPasswordField pass2){
         return Objects.equals(pass1.getText(), pass2.getText());
     }

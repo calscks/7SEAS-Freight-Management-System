@@ -1,11 +1,9 @@
 package org.svseas.utils;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 /**
@@ -41,7 +39,6 @@ public class Dialogue extends JFXDialog{
         switch (dialogueType){
             case ACCEPT:
                 ok = new DialogueButton("OK");
-                ok.setOnMouseClicked(event -> this.close());
                 layout.setActions(ok);
                 break;
             case CONFIRMATION:
@@ -64,14 +61,3 @@ public class Dialogue extends JFXDialog{
     }
 }
 
-class DialogueButton extends JFXButton{
-
-    DialogueButton(String string){
-        Color color = Color.web("f8f8f8", 0.15);
-        setRipplerFill(color);
-        setStyle("-fx-background-color: rgba(26, 188, 156,1.0);");
-        setText(string);
-        setTextFill(Color.WHITE);
-    }
-
-}

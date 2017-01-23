@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.svseas.model.account.Account;
 
 import java.io.IOException;
 
@@ -44,7 +45,11 @@ public class ButtonStageShow {
     }
 
     //pass parameter to edit stage
-    public <T, C extends AccountManipulator> void operate(T param){
+
+    /**
+     * Must use as {@code instance.<T,C>operate(T param)!}
+     */
+    public <T, C extends Manipulator> void operate(T param){
         Stage stage = new Stage();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(url));

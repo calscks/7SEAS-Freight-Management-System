@@ -5,6 +5,8 @@ import org.svseas.model.ObjectList;
 import org.svseas.model.ship.Ship;
 import org.svseas.utils.Tester;
 
+import java.util.Objects;
+
 /**
  * Coded by Seong Chee Ken on 22/01/2017, 17:55. CRUD on ship.
  */
@@ -57,6 +59,17 @@ public class ShipOperations {
             return shipList;
         } else Tester.FAIL_READ.printer();
         return null;
+    }
+
+    @SuppressWarnings("unchecked")
+    public boolean read(String ship_id){
+        if (DataFile.analyse(df)) {
+            ObjectList<Ship> shipList = (ObjectList<Ship>) xmlops.read(df);
+            for (Ship ship : shipList.getList()){
+                if (Objects.equals(ship.getShip_id(), ship_id)) return true;
+            }
+        }
+        return false;
     }
 
     @SuppressWarnings("unchecked")

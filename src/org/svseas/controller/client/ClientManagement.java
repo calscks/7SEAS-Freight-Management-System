@@ -83,9 +83,10 @@ public class ClientManagement {
         btn_editClient.setOnMouseClicked(event -> {
             if (event.getButton().equals(MouseButton.PRIMARY)) {
                 if (table_client.getSelectionModel().isEmpty()) {
-                    new Dialogue("Client Not Selected",
+                    Dialogue dialogue = new Dialogue("Client Not Selected",
                             "Client is not being selected. Please select a client from the table.",
                             clientmgnt_root, Dialogue.DialogueType.ACCEPT);
+                    dialogue.getOk().setOnMouseClicked(event1 -> dialogue.close());
                 } else {
                     Client client = table_client.getSelectionModel().getSelectedItem().getValue();
                     ObjectList<ClientAccount> clientList = (ObjectList<ClientAccount>)
@@ -108,9 +109,12 @@ public class ClientManagement {
         btn_delClient.setOnMouseClicked(event -> {
             if (event.getButton().equals(MouseButton.PRIMARY)) {
                 if (table_client.getSelectionModel().isEmpty()) {
-                    new Dialogue("Client Not Selected",
+                    Dialogue dialogue = new Dialogue("Client Not Selected",
                             "Client is not being selected. Please select a client from the table.",
                             clientmgnt_root, Dialogue.DialogueType.ACCEPT);
+                    dialogue.getOk().setOnMouseClicked(e-> {
+                        if (e.getButton().equals(MouseButton.PRIMARY)) dialogue.close();
+                    });
                 } else {
                     Client client = table_client.getSelectionModel().getSelectedItem().getValue();
                     AccountOperations<ClientAccount> accops = new AccountOperations<>(df);
