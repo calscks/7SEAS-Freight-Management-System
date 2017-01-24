@@ -9,16 +9,21 @@ import java.util.List;
  */
 @XmlRootElement
 public class Route <T> {
-    private String routeId, routeName, routeLength, ratePerNm, total;
+    private String routeId, routeName, routeLength, ratePerNm, total, travel, distance;
     private List<T> portList;
 
-
-    public Route(String routeId, String routeName, String routeLength, String ratePerNm, String total) {
+    public Route(String routeId, String routeName, String routeLength, String ratePerNm, String total, String travel,
+                 String distance) {
         this.routeId = routeId;
         this.routeName = routeName;
         this.routeLength = routeLength;
         this.ratePerNm = ratePerNm;
         this.total = total;
+        this.travel = travel;
+        this.distance = distance;
+    }
+
+    public Route() {
     }
 
     public String getRouteId() {
@@ -61,6 +66,22 @@ public class Route <T> {
         this.total = total;
     }
 
+    public String getTravel() {
+        return travel;
+    }
+
+    public void setTravel(String travel) {
+        this.travel = travel;
+    }
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
+    }
+
     @XmlAnyElement (lax=true)
 
     public List<T> getPortList() {
@@ -79,8 +100,17 @@ public class Route <T> {
         return portList.size();
     }
 
+    public T get(int index){
+        return portList.get(index);
+    }
+
+    public T getLast(){
+        return portList.get(portList.size() - 1);
+    }
+
     public void remove(T t){
         portList.remove(t);
     }
+
 
 }

@@ -66,14 +66,6 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="37.0" prefWidth="169.0" text="Intermediate Port:">
-                                 <padding>
-                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
-                                 </padding>
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
                               <Label text="Distance (NM):">
                                  <padding>
                                     <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
@@ -103,14 +95,6 @@
                         <VBox prefHeight="185.0" prefWidth="90.0">
                            <children>
                               <Label fx:id="label_noPorts" text="0" textFill="#00788f">
-                                 <padding>
-                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
-                                 </padding>
-                                 <font>
-                                    <Font name="System Italic" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="label_intermediate" text="None" textFill="#00788f">
                                  <padding>
                                     <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
                                  </padding>

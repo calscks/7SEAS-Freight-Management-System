@@ -7,6 +7,7 @@ import org.svseas.model.route.Port;
 import org.svseas.model.route.Route;
 import org.svseas.utils.Tester;
 
+import java.util.Iterator;
 import java.util.Objects;
 
 @SuppressWarnings("unchecked")
@@ -18,20 +19,18 @@ public class RouteOperations extends Operation {
 
     public RouteOperations(Route<Port> route) {
         this.route = route;
-        xmlops = new XMLOperation(ObjectList.class, Route.class);
+        xmlops = new XMLOperation(ObjectList.class, Route.class, Port.class);
     }
 
     public RouteOperations() {
-        xmlops = new XMLOperation(ObjectList.class, Route.class);
+        xmlops = new XMLOperation(ObjectList.class, Route.class, Port.class);
     }
 
-    @Override
-    public <T> boolean create(T type, XMLOperation xmlops, DataFile df) {
-        return super.create(type, xmlops, df);
+    public boolean create() {
+        return super.create(route, xmlops, df);
     }
 
-    @Override
-    public <T> ObjectList<T> read(DataFile df, XMLOperation xmlops) {
+    public ObjectList<Route<Port>> read() {
         return super.read(df, xmlops);
     }
 
@@ -47,13 +46,21 @@ public class RouteOperations extends Operation {
     @Override
     public void update(String route_id) {
         ObjectList<Route<Port>> routeList = (ObjectList<Route<Port>>) xmlops.read(df);
-        for (Route<Port> route : routeList.getList()){
-            if (Objects.equals(route.getRouteId(), route_id)){
-                routeList.remove(route);
-                routeList.add(this.route);
+
+        new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                for (Route<Port> routes : routeList.getList()) {
+                    if (Objects.equals(routes.getRouteId(), route_id)) {
+                        int index = routeList.getList().indexOf(routes);
+                        routeList.remove(routes);
+                        routeList.add(index, route);
+                        xmlops.write(df, routeList);
+                    }
+                }
+                return null;
             }
-        }
-        xmlops.write(df, routeList);
+        }.run();
         Tester.SUCCESS.printer();
     }
 
@@ -64,12 +71,14 @@ public class RouteOperations extends Operation {
             @Override
             protected Void call() throws Exception {
                 for (Route<Port> routes : routeList.getList()){
-                    if (routes.getRouteId().equals(route_id)) routeList.remove(routes);
+                    if (routes.getRouteId().equals(route_id)){
+                        routeList.remove(routes);
+                        xmlops.write(df, routeList);
+                    }
                 }
                 return null;
             }
         }.run();
-        xmlops.write(df, routeList);
         Tester.SUCCESS.printer();
         return true;
     }

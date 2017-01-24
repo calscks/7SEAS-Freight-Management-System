@@ -16,6 +16,7 @@ import java.util.List;
 /**
  * Coded by Seong Chee Ken on 23/01/2017, 15:06.
  */
+@SuppressWarnings("Duplicates")
 public class ShipPreview extends Manipulator {
     @FXML
     private TableView<Preview> table_preview;
@@ -44,6 +45,7 @@ public class ShipPreview extends Manipulator {
             });
         }
     }
+
 
     @Override
     @SuppressWarnings("unchecked")

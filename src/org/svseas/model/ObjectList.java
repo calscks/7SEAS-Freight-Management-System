@@ -19,6 +19,10 @@ public class ObjectList<T> {
         list.add(t);
     }
 
+    public void add(int index, T t) {
+        list.add(index, t);
+    }
+
     public T get(int index){
         return list.get(index);
     }

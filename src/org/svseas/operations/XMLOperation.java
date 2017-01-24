@@ -40,12 +40,14 @@ public class XMLOperation {
 
     public Object read(DataFile dataFile) {
         try {
-            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-            StreamSource source = new StreamSource(dataFile.getData_path());
-            return unmarshaller.unmarshal(source, ObjectList.class).getValue();
+            if (DataFile.analyse(dataFile)) {
+                Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+                StreamSource source = new StreamSource(dataFile.getData_path());
+                return unmarshaller.unmarshal(source, ObjectList.class).getValue();
+            }
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-        return null;
+        return new Object();
     }
 }

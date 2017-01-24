@@ -48,30 +48,39 @@ public class PortOperations extends Operation {
     @Override
     public void update(String port_id) {
         ObjectList<Port> portList = (ObjectList<Port>) xmlops.read(df);
-        for (Port ports : portList.getList()){
-            if (ports.getPortId().equals(port_id)){
-                portList.remove(ports);
-                portList.add(port);
-            }
-        }
-        xmlops.write(df, portList);
-        Tester.SUCCESS.printer();
-    }
-
-    @Override
-    public boolean delete(String port_id) {
-        ObjectList<Port> portList = (ObjectList<Port>) xmlops.read(df);
         new Task<Void>() {
             @Override
             protected Void call() throws Exception {
                 for (Port ports : portList.getList()){
-                    if (ports.getPortId().equals(port_id)) portList.remove(ports);
+                    if (ports.getPortId().equals(port_id)){
+                        int index = portList.getList().indexOf(ports);
+                        portList.remove(ports);
+                        portList.add(index, port);
+                    }
                 }
                 return null;
             }
         }.run();
         xmlops.write(df, portList);
         Tester.SUCCESS.printer();
+    }
+
+    @Override
+    public boolean delete(String port_id) {
+        if (DataFile.analyse(df)) {
+            ObjectList<Port> portList = (ObjectList<Port>) xmlops.read(df);
+            new Task<Void>() {
+                @Override
+                protected Void call() throws Exception {
+                    for (Port ports : portList.getList()){
+                        if (ports.getPortId().equals(port_id)) portList.remove(ports);
+                    }
+                    return null;
+                }
+            }.run();
+            xmlops.write(df, portList);
+            Tester.SUCCESS.printer();
+        }
         return true;
     }
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="routemgnt_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1030.0" style="-fx-background-color: rgba(236, 240, 241, 1.0);" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.svseas.controller.route.RouteManagement">
+<StackPane fx:id="routemgnt_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1030.0" style="-fx-background-color: rgba(236, 240, 241, 1.0);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.svseas.controller.route.RouteManagement">
    <children>
       <AnchorPane prefHeight="700.0" prefWidth="1030.0">
          <children>
@@ -19,6 +19,7 @@
                   <JFXTreeTableColumn fx:id="routeId" minWidth="150.0" prefWidth="200.0" text="Route ID" />
                   <JFXTreeTableColumn fx:id="routeName" minWidth="150.0" prefWidth="200.0" text="Route Name" />
                   <JFXTreeTableColumn fx:id="travel" minWidth="150.0" text="Travels" />
+                  <JFXTreeTableColumn fx:id="distance" maxWidth="250.0" minWidth="150.0" text="Distance Travelled (NM)" />
                   <JFXTreeTableColumn fx:id="length" minWidth="150.0" text="Route Length" />
                   <JFXTreeTableColumn fx:id="rate" minWidth="150.0" text="Rate (per NM)" />
                   <JFXTreeTableColumn fx:id="charge_total" minWidth="150.0" text="Total Charges" />

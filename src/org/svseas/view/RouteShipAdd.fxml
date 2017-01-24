@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane fx:id="routeshipadd_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.svseas.controller.route.RouteShipAdd">
+   <children>
+      <AnchorPane prefHeight="306.0" prefWidth="463.0">
+         <children>
+            <JFXButton fx:id="btn_add" layoutX="141.0" layoutY="223.0" prefHeight="65.0" prefWidth="181.0" ripplerFill="#adadad86" text="ADD" textFill="#389a3d">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXComboBox fx:id="cbox_ship" layoutX="82.0" layoutY="55.0" prefHeight="44.0" prefWidth="300.0" promptText="Ship" />
+            <JFXComboBox fx:id="cbox_route" layoutX="82.0" layoutY="155.0" prefHeight="44.0" prefWidth="300.0" promptText="Route" />
+            <Label layoutX="75.0" layoutY="18.0" prefHeight="37.0" prefWidth="146.0" text="Assign:">
+               <padding>
+                  <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="118.0" prefHeight="37.0" prefWidth="146.0" text="To:">
+               <padding>
+                  <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
