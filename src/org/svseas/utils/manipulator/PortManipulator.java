@@ -1,7 +1,7 @@
 package org.svseas.utils.manipulator;
 
 import com.jfoenix.controls.JFXButton;
-import org.svseas.model.port.Port;
+import org.svseas.model.route.Port;
 import org.svseas.operations.PortOperations;
 
 /**
@@ -9,7 +9,7 @@ import org.svseas.operations.PortOperations;
  */
 public abstract class PortManipulator extends Manipulator {
 
-    public boolean port_match(Port port){
+    protected boolean port_match(Port port){
         PortOperations ops = new PortOperations(port);
         return ops.read(port.getPortId());
     }

@@ -6,7 +6,7 @@ import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import org.svseas.model.port.Port;
+import org.svseas.model.route.Port;
 import org.svseas.operations.PortOperations;
 import org.svseas.utils.manipulator.PortManipulator;
 

@@ -1,4 +1,4 @@
-package org.svseas.model.port;
+package org.svseas.model.route;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

@@ -2,7 +2,7 @@ package org.svseas.operations;
 
 import org.svseas.data.DataFile;
 import org.svseas.model.ObjectList;
-import org.svseas.model.port.Port;
+import org.svseas.model.route.Port;
 import org.svseas.utils.Tester;
 
 import java.util.Objects;
