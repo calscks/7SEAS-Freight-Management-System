@@ -6,11 +6,12 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+import org.svseas.utils.manipulator.RouteManipulator;
 
 /**
  * Coded by Seong Chee Ken on 24/01/2017, 10:43.
  */
-public class RouteAdd {
+public class RouteAdd extends RouteManipulator {
     @FXML private StackPane routeadd_root;
     @FXML private JFXTextField route_id, charge_per_nm, route_name;
     @FXML private JFXComboBox<String> cbox_source, cbox_destination;
@@ -21,4 +22,7 @@ public class RouteAdd {
     public void initialize(){
 
     }
+
+    @Override
+    public <T> void initData(T param) {}
 }

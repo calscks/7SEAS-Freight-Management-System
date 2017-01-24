@@ -96,7 +96,7 @@ public class PortManagement {
                             focus(newIndex);
 
                             ObjectList<Port> portList = new ObjectList<>();
-                            for (PortInTable portInTable : portInTables){
+                            for (PortInTable portInTable : portInTables) {
                                 Port port = new Port(portInTable.getPortId(), portInTable.getName(),
                                         portInTable.getDist_nextPort());
                                 portList.add(port);
@@ -125,7 +125,7 @@ public class PortManagement {
                             focus(newIndex);
 
                             ObjectList<Port> portList = new ObjectList<>();
-                            for (PortInTable portInTable : portInTables){
+                            for (PortInTable portInTable : portInTables) {
                                 Port port = new Port(portInTable.getPortId(), portInTable.getName(),
                                         portInTable.getDist_nextPort());
                                 portList.add(port);
@@ -143,8 +143,8 @@ public class PortManagement {
             if (e.getButton().equals(MouseButton.PRIMARY)) populate();
         });
 
-        btn_delPort.setOnMouseClicked(e->{
-            if (e.getButton().equals(MouseButton.PRIMARY)){
+        btn_delPort.setOnMouseClicked(e -> {
+            if (e.getButton().equals(MouseButton.PRIMARY)) {
                 if (table_port.getSelectionModel().isEmpty()) {
                     Dialogue dialogue = new Dialogue("Port Not Selected",
                             "Port is not selected. Please select a port from the table to delete.",
@@ -193,11 +193,14 @@ public class PortManagement {
         PortOperations ops = new PortOperations();
         ObjectList<Port> portList = ops.read();
         portInTables = FXCollections.observableArrayList();
-        for (Port port : portList.getList()) {
-            PortInTable portInTable = new PortInTable(port.getPortId(), port.getName(), port.getDistance_nextPort());
-            portInTables.add(portInTable);
+
+        if (portList != null) {
+            for (Port port : portList.getList()) {
+                PortInTable portInTable = new PortInTable(port.getPortId(), port.getName(), port.getDistance_nextPort());
+                portInTables.add(portInTable);
+                table_port.setRoot(new RecursiveTreeItem<>(portInTables, RecursiveTreeObject::getChildren));
+                table_port.setShowRoot(false);
+            }
         }
-        table_port.setRoot(new RecursiveTreeItem<>(portInTables, RecursiveTreeObject::getChildren));
-        table_port.setShowRoot(false);
     }
 }

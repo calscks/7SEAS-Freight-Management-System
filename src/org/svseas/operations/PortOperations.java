@@ -1,5 +1,7 @@
 package org.svseas.operations;
 
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
 import org.svseas.data.DataFile;
 import org.svseas.model.ObjectList;
 import org.svseas.model.route.Port;
@@ -59,9 +61,15 @@ public class PortOperations extends Operation {
     @Override
     public boolean delete(String port_id) {
         ObjectList<Port> portList = (ObjectList<Port>) xmlops.read(df);
-        for (Port ports : portList.getList()){
-            if (ports.getPortId().equals(port_id)) portList.remove(ports);
-        }
+        new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                for (Port ports : portList.getList()){
+                    if (ports.getPortId().equals(port_id)) portList.remove(ports);
+                }
+                return null;
+            }
+        }.run();
         xmlops.write(df, portList);
         Tester.SUCCESS.printer();
         return true;

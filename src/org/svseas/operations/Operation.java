@@ -12,9 +12,9 @@ public abstract class Operation {
 
     public <T> boolean create(T type, XMLOperation xmlops, DataFile df){
         if (!DataFile.analyse(df)) {
-            ObjectList<T> shipList = new ObjectList<>();
-            shipList.add(type);
-            xmlops.write(df, shipList);
+            ObjectList<T> list = new ObjectList<>();
+            list.add(type);
+            xmlops.write(df, list);
             Tester.SUCCESS.printer();
             return true;
         }

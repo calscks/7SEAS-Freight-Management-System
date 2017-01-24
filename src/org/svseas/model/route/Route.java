@@ -1,13 +1,17 @@
 package org.svseas.model.route;
 
+import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 /**
  * Coded by Seong Chee Ken on 24/01/2017, 11:45.
  */
+@XmlRootElement
 public class Route <T> {
     private String routeId, routeName, routeLength, ratePerNm, total;
     private List<T> portList;
+
 
     public Route(String routeId, String routeName, String routeLength, String ratePerNm, String total) {
         this.routeId = routeId;
@@ -57,6 +61,8 @@ public class Route <T> {
         this.total = total;
     }
 
+    @XmlAnyElement (lax=true)
+
     public List<T> getPortList() {
         return portList;
     }
@@ -65,5 +71,16 @@ public class Route <T> {
         this.portList = portList;
     }
 
+    public void add(T t){
+        portList.add(t);
+    }
+
+    public int size(){
+        return portList.size();
+    }
+
+    public void remove(T t){
+        portList.remove(t);
+    }
 
 }

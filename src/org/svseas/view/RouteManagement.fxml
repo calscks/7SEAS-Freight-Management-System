@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="routemgnt_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1030.0" style="-fx-background-color: rgba(236, 240, 241, 1.0);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.svseas.controller.route.RouteManagement">
+<StackPane fx:id="routemgnt_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1030.0" style="-fx-background-color: rgba(236, 240, 241, 1.0);" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.svseas.controller.route.RouteManagement">
    <children>
       <AnchorPane prefHeight="700.0" prefWidth="1030.0">
          <children>
@@ -27,7 +27,7 @@
                   <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </JFXTreeTableView>
-            <VBox layoutX="39.0" layoutY="60.0" prefHeight="156.0" prefWidth="167.0" spacing="35.0" AnchorPane.leftAnchor="36.0">
+            <VBox layoutX="39.0" layoutY="60.0" prefHeight="236.0" prefWidth="167.0" spacing="35.0" AnchorPane.leftAnchor="36.0">
                <children>
                   <JFXButton fx:id="btn_addRoute" buttonType="RAISED" prefHeight="49.0" prefWidth="167.0" ripplerFill="#92f22a" style="-fx-background-color: #03A678;" text="ADD..." textFill="WHITE">
                      <font>
@@ -35,6 +35,11 @@
                      </font>
                   </JFXButton>
                   <JFXButton fx:id="btn_refreshRoute" buttonType="RAISED" prefHeight="49.0" prefWidth="167.0" ripplerFill="#42efff" style="-fx-background-color: #19B5FE;" text="REFRESH" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_routePreview" buttonType="RAISED" prefHeight="49.0" prefWidth="167.0" ripplerFill="#42baff" style="-fx-background-color: #2C82C9;" text="Preview" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
