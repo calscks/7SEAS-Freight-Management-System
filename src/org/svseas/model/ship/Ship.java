@@ -90,4 +90,10 @@ public class Ship {
     public void setLeaseType(LeaseType leaseType) {
         this.leaseType = leaseType;
     }
+
+    //for ship inside combo box
+    @Override
+    public String toString() {
+        return type + " - " + ship_id;
+    }
 }

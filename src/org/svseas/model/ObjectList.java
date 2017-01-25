@@ -27,6 +27,10 @@ public class ObjectList<T> {
         return list.get(index);
     }
 
+    public T getLast() {
+        return list.get(list.size() - 1);
+    }
+
     public int size(){
         return list.size();
     }

@@ -15,8 +15,8 @@
             <children>
                 <JFXTreeTableView fx:id="table_freight" layoutX="239.0" layoutY="60.0" prefHeight="580.0" prefWidth="755.0" AnchorPane.rightAnchor="36.0">
                     <columns>
-                        <JFXTreeTableColumn fx:id="bookId" minWidth="150.0" prefWidth="200.0" text="Booking ID" />
-                        <JFXTreeTableColumn fx:id="custUsername" minWidth="150.0" prefWidth="200.0" text="Customer's Username" />
+                        <JFXTreeTableColumn fx:id="bookId" minWidth="150.0" text="Booking ID" />
+                        <JFXTreeTableColumn fx:id="custUsername" minWidth="150.0" text="Customer's Username" />
                         <JFXTreeTableColumn fx:id="shipId" minWidth="150.0" text="Ship ID" />
                         <JFXTreeTableColumn fx:id="shipType" maxWidth="250.0" minWidth="150.0" text="Ship Type" />
                         <JFXTreeTableColumn fx:id="route" minWidth="150.0" text="Route" />

@@ -7,10 +7,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class Freight {
-    private String bookingId, customer, source, destination, route, travel, cargoWeight, cargoType, totalCharges;
+    private String bookingId, customer, source, destination, route, travel, cargoWeight, cargoType, shipId, totalCharges;
 
-    public Freight(String bookingId, String customer, String source, String destination, String route, String travel,
-                   String cargoWeight, String cargoType, String totalCharges) {
+    public Freight(String bookingId, String customer, String source, String destination, String route,
+                   String travel, String cargoWeight, String cargoType, String shipId, String totalCharges) {
         this.bookingId = bookingId;
         this.customer = customer;
         this.source = source;
@@ -19,6 +19,7 @@ public class Freight {
         this.travel = travel;
         this.cargoWeight = cargoWeight;
         this.cargoType = cargoType;
+        this.shipId = shipId;
         this.totalCharges = totalCharges;
     }
 
@@ -87,6 +88,14 @@ public class Freight {
 
     public void setCargoType(String cargoType) {
         this.cargoType = cargoType;
+    }
+
+    public String getShipId() {
+        return shipId;
+    }
+
+    public void setShipId(String shipId) {
+        this.shipId = shipId;
     }
 
     public String getTotalCharges() {

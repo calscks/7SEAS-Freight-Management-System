@@ -63,9 +63,9 @@ public class ShipAdd extends ShipManipulator {
         BooleanBinding binding = ship_id.textProperty().isEmpty()
                 .or(max_load.textProperty().isEmpty())
                 .or(ship_value.textProperty().isEmpty())
-                .or(cbox_country.selectionModelProperty().isNull())
-                .or(cbox_username.selectionModelProperty().isNull())
-                .or(cbox_shipType.selectionModelProperty().isNull())
+                .or(cbox_country.getSelectionModel().selectedItemProperty().isNull())
+                .or(cbox_username.getSelectionModel().selectedItemProperty().isNull())
+                .or(cbox_shipType.getSelectionModel().selectedItemProperty().isNull())
                 .or(lease_type.selectedToggleProperty().isNull());
 
         btn_add.disableProperty().bind(binding);

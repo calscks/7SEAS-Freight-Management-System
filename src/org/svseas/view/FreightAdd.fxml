@@ -53,6 +53,11 @@
                         <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
                      </padding>
                   </JFXComboBox>
+                  <JFXComboBox fx:id="cbox_ship" editable="true" prefHeight="43.0" prefWidth="349.0" promptText="Choose ship">
+                     <padding>
+                        <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                     </padding>
+                  </JFXComboBox>
                   <JFXTextField fx:id="cargo_weight" focusColor="#1c7eff" promptText="Cargo weight (ton)" unFocusColor="#75757585">
                      <font>
                         <Font size="16.0" />
@@ -89,7 +94,7 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="Cargo Charges:">
+                              <Label text="Cargo Charges (USD):">
                                  <padding>
                                     <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
                                  </padding>
@@ -97,7 +102,15 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="37.0" prefWidth="172.0" text="Route Charges:">
+                              <Label text="Ship Charges (USD):">
+                                 <padding>
+                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                                 </padding>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="37.0" prefWidth="172.0" text="Route Charges (USD):">
                                  <padding>
                                     <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
                                  </padding>
@@ -126,6 +139,14 @@
                                  </font>
                               </Label>
                               <Label fx:id="label_cargoCharge" text="0" textFill="#00788f">
+                                 <padding>
+                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_shipCharge" text="0" textFill="#00788f">
                                  <padding>
                                     <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
                                  </padding>

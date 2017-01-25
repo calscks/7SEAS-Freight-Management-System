@@ -23,11 +23,15 @@ import org.svseas.utils.Dialogue;
  * Coded by Seong Chee Ken on 24/01/2017, 10:48.
  */
 public class RouteShipAdd {
-    @FXML private StackPane routeshipadd_root;
-    @FXML private JFXButton btn_add;
-    @FXML private JFXComboBox<String> cbox_ship, cbox_route;
+    @FXML
+    private StackPane routeshipadd_root;
+    @FXML
+    private JFXButton btn_add;
+    @FXML
+    private JFXComboBox<String> cbox_ship, cbox_route;
 
-    @FXML public void initialize(){
+    @FXML
+    public void initialize() {
         ShipOperations ops = new ShipOperations();
         RouteOperations ops2 = new RouteOperations();
         ObjectList<Ship> shipList = ops.read();
@@ -35,30 +39,30 @@ public class RouteShipAdd {
         ObservableList<String> shipIds = FXCollections.observableArrayList();
         ObservableList<String> routeNames = FXCollections.observableArrayList();
 
-        for (Ship ship : shipList.getList()){
+        for (Ship ship : shipList.getList()) {
             shipIds.add(ship.getShip_id());
         }
-        for (Route<Port> route : routeList.getList()){
+        for (Route<Port> route : routeList.getList()) {
             routeNames.add(route.getRouteName());
         }
 
         cbox_ship.setItems(shipIds);
         cbox_route.setItems(routeNames);
 
-        BooleanBinding binding = cbox_ship.selectionModelProperty().isNull().or(
-                cbox_route.selectionModelProperty().isNull());
+        BooleanBinding binding = cbox_ship.getSelectionModel().selectedItemProperty().isNull().or(
+                cbox_route.getSelectionModel().selectedItemProperty().isNull());
         btn_add.disableProperty().bind(binding);
 
         btn_add.setOnMouseClicked(event -> {
-            if (event.getButton().equals(MouseButton.PRIMARY)){
+            if (event.getButton().equals(MouseButton.PRIMARY)) {
                 RouteShip routeShip = new RouteShip(cbox_ship.getSelectionModel().getSelectedItem(),
                         cbox_route.getSelectionModel().getSelectedItem());
                 RouteShipOperations ops3 = new RouteShipOperations(routeShip);
-                if (ops3.read(routeShip.getShip_id(), routeShip.getRoute_name())){
+                if (ops3.read(routeShip.getShip_id(), routeShip.getRoute_name())) {
                     Dialogue dialogue = new Dialogue("Found", "The ship has already been assigned to this route before!",
                             routeshipadd_root, Dialogue.DialogueType.ACCEPT);
                     dialogue.getOk().setOnMouseClicked(event1 -> dialogue.close());
-                }else{
+                } else {
                     ops3.create();
                     Stage thisStage = (Stage) routeshipadd_root.getScene().getWindow();
                     thisStage.close();

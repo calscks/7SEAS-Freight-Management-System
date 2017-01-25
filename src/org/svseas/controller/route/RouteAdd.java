@@ -41,8 +41,8 @@ public class RouteAdd extends RouteManipulator {
         BooleanBinding binding = route_id.textProperty().isEmpty()
                 .or(charge_per_nm.textProperty().isEmpty())
                 .or(route_name.textProperty().isEmpty())
-                .or(cbox_source.selectionModelProperty().isNull())
-                .or(cbox_destination.selectionModelProperty().isNull());
+                .or(cbox_source.getSelectionModel().selectedItemProperty().isNull())
+                .or(cbox_destination.getSelectionModel().selectedItemProperty().isNull());
         btn_add.disableProperty().bind(binding);
 
         loadPort(cbox_source, cbox_destination);

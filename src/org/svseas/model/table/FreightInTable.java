@@ -1,5 +1,6 @@
 package org.svseas.model.table;
 
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -8,7 +9,7 @@ import javafx.beans.property.StringProperty;
 /**
  * Coded by Seong Chee Ken on 25/01/2017, 12:45.
  */
-public class FreightInTable {
+public class FreightInTable extends RecursiveTreeObject<FreightInTable> {
     private StringProperty bookingId, customer, source, destination, route, travel, cargoWeight, cargoType;
     private DoubleProperty totalCharges;
 
