@@ -6,12 +6,14 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.svseas.model.route.Port;
 import org.svseas.model.route.Route;
 import org.svseas.operations.RouteOperations;
+import org.svseas.utils.Validator;
 import org.svseas.utils.manipulator.RouteManipulator;
 
 import java.util.ArrayList;
@@ -39,6 +41,11 @@ public class RouteEdit extends RouteManipulator{
 
     @FXML
     public void initialize(){
+
+        route_id.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNo(20));
+        charge_per_nm.addEventFilter(KeyEvent.KEY_TYPED, Validator.validPrice(20));
+        route_name.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNoSpace(200));
+
         route_id.setDisable(true);
         loadPort(cbox_source, cbox_destination);
         ports = numberOfPorts(cbox_source, cbox_destination, label_noPorts, label_length, label_dist);

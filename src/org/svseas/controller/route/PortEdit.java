@@ -4,10 +4,12 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.svseas.model.route.Port;
 import org.svseas.operations.PortOperations;
+import org.svseas.utils.Validator;
 import org.svseas.utils.manipulator.PortManipulator;
 
 /**
@@ -23,6 +25,11 @@ public class PortEdit extends PortManipulator {
 
     @FXML
     public void initialize() {
+
+        port_id.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNo(20));
+        port_name.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNoSpace(50));
+        dist_nextPort.addEventFilter(KeyEvent.KEY_TYPED, Validator.validPrice(20));
+
         port_id.setDisable(true);
         BooleanBinding binding = port_id.textProperty().isEmpty()
                 .or(port_name.textProperty().isEmpty())

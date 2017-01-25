@@ -14,6 +14,7 @@ import javafx.scene.control.TreeTableColumn;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import org.svseas.data.DataFile;
+import org.svseas.data.LoginData;
 import org.svseas.model.ObjectList;
 import org.svseas.model.account.CustomerAccount;
 import org.svseas.model.table.Customer;
@@ -41,8 +42,17 @@ public class CustManagement {
     private JFXTextField field_custSearch;
 
     @FXML
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked", "Duplicates"})
     public void initialize() {
+
+        if (Objects.equals(LoginData.authority, "Client")){
+            btn_addCust.setVisible(false);
+            btn_editCust.setVisible(false);
+            btn_refreshCust.setVisible(false);
+            btn_delCust.setVisible(false);
+        }
+
+
         username.setCellValueFactory((TreeTableColumn.CellDataFeatures<Customer, String> param) -> {
             if (username.validateValue(param))
                 return param.getValue().getValue().usernameProperty();

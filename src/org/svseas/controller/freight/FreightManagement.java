@@ -14,13 +14,10 @@ import javafx.scene.control.TreeTableCell;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
-import org.svseas.controller.route.RouteEdit;
+import org.svseas.data.LoginData;
 import org.svseas.model.ObjectList;
 import org.svseas.model.freight.Freight;
-import org.svseas.model.route.Route;
 import org.svseas.model.table.FreightInTable;
-import org.svseas.model.table.RouteInTable;
-import org.svseas.model.table.ShipInTable;
 import org.svseas.operations.FreightOperations;
 import org.svseas.utils.ButtonStageShow;
 import org.svseas.utils.Dialogue;
@@ -48,14 +45,22 @@ public class FreightManagement {
     private JFXTextField field_freightSearch;
 
     @FXML
-    public void initialize(){
+    public void initialize() {
+
+        if (Objects.equals(LoginData.authority, "Client")){
+            btn_addFreight.setVisible(false);
+            btn_editFreight.setVisible(false);
+            btn_refreshFreight.setVisible(false);
+            btn_delFreight.setVisible(false);
+        }
+
         cellValueFactory();
 
         ButtonStageShow adder = new ButtonStageShow(btn_addFreight, "/org/svseas/view/FreightAdd.fxml", "Add Freight");
         adder.operate();
 
         btn_editFreight.setOnMouseClicked(event -> {
-            if (event.getButton().equals(MouseButton.PRIMARY)){
+            if (event.getButton().equals(MouseButton.PRIMARY)) {
                 if (table_freight.getSelectionModel().isEmpty()) {
                     Dialogue dialogue = new Dialogue("Freight Not Selected",
                             "Freight is not selected. Please select a freight from the table to edit.",
@@ -65,8 +70,8 @@ public class FreightManagement {
                     FreightInTable freightInTable = table_freight.getSelectionModel().getSelectedItem().getValue();
                     FreightOperations ops = new FreightOperations();
                     ObjectList<Freight> list = ops.read();
-                    for (Freight freight : list.getList()){
-                        if (Objects.equals(freight.getBookingId(), freightInTable.getBookingId())){
+                    for (Freight freight : list.getList()) {
+                        if (Objects.equals(freight.getBookingId(), freightInTable.getBookingId())) {
                             ButtonStageShow editor = new ButtonStageShow("/org/svseas/view/FreightEdit.fxml",
                                     "Modify Freight");
                             editor.<Freight, FreightEdit>operate(freight);
@@ -81,7 +86,7 @@ public class FreightManagement {
         });
 
         btn_delFreight.setOnMouseClicked(event -> {
-            if (event.getButton().equals(MouseButton.PRIMARY)){
+            if (event.getButton().equals(MouseButton.PRIMARY)) {
                 if (table_freight.getSelectionModel().isEmpty()) {
                     Dialogue dialogue = new Dialogue("Freight Not Selected",
                             "Freight is not selected. Please select a freight from the table to edit.",
@@ -95,9 +100,19 @@ public class FreightManagement {
                 }
             }
         });
+
+        field_freightSearch.textProperty().addListener((observable, oldValue, newValue) ->
+                table_freight.setPredicate(freight -> freight.getValue().getBookingId().contains(newValue) ||
+                        freight.getValue().getTravel().contains(newValue) ||
+                        freight.getValue().getCargoType().contains(newValue) ||
+                        freight.getValue().getCustomer().contains(newValue) ||
+                        freight.getValue().getDestination().contains(newValue) ||
+                        freight.getValue().getSource().contains(newValue) ||
+                        freight.getValue().getTravel().contains(newValue)
+                ));
     }
 
-    private void cellValueFactory(){
+    private void cellValueFactory() {
         bookId.setCellValueFactory((TreeTableColumn.CellDataFeatures<FreightInTable, String> param) -> {
             if (bookId.validateValue(param))
                 return param.getValue().getValue().bookingIdProperty();
@@ -148,11 +163,11 @@ public class FreightManagement {
         populate();
     }
 
-    private void populate(){
+    private void populate() {
         FreightOperations ops = new FreightOperations();
         ObjectList<Freight> flist = ops.read();
         ObservableList<FreightInTable> frOlist = FXCollections.observableArrayList();
-        for (Freight freight : flist.getList()){
+        for (Freight freight : flist.getList()) {
             FreightInTable freightInTable = new FreightInTable(freight.getBookingId(), freight.getCustomer(), freight.getSource(),
                     freight.getDestination(), freight.getRoute(), freight.getTravel(), freight.getCargoWeight(),
                     freight.getCargoType(), Double.parseDouble(freight.getTotalCharges()));

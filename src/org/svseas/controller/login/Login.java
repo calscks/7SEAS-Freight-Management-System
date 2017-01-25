@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -18,6 +19,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.svseas.data.DataFile;
 import org.svseas.data.InputType;
+import org.svseas.data.LoginData;
 import org.svseas.model.account.AdminAccount;
 import org.svseas.model.account.ClientAccount;
 import org.svseas.model.account.CustomerAccount;
@@ -68,6 +70,8 @@ public class Login {
         list.add(lblFreight);
         list.add(lblMS);
 
+        tfName.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNo(20));
+
         for (Labeled labeled : list) {
             labeled.setStyle("-fx-font-family: Aaargh Normal");
         }
@@ -95,6 +99,13 @@ public class Login {
                         dialog.show(login_root);
                         acceptButton.setOnMouseClicked((e)-> dialog.close());
                     } else {
+                        LoginData.username = username;
+                        if (admin.read(username))
+                            LoginData.authority = "Administrator";
+                        else if (customer.read(username))
+                            LoginData.authority = "Customer";
+                        else if (client.read(username))
+                            LoginData.authority = "Client";
                         Tester.SUCCESS.printer();
                         try {
                             Parent root = FXMLLoader.load(getClass().getResource("/org/svseas/view/MainPane.fxml"));

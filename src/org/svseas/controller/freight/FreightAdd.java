@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -16,6 +17,7 @@ import org.svseas.model.route.Port;
 import org.svseas.model.route.Route;
 import org.svseas.model.ship.Ship;
 import org.svseas.operations.FreightOperations;
+import org.svseas.utils.Validator;
 import org.svseas.utils.manipulator.FreightManipulator;
 
 import java.util.Objects;
@@ -45,6 +47,9 @@ public class FreightAdd extends FreightManipulator {
 
     @FXML
     public void initialize() {
+
+        cargo_weight.addEventFilter(KeyEvent.KEY_TYPED, Validator.validPrice(20));
+
         ObjectList<Freight> ops = new FreightOperations().read();
         if (!DataFile.analyse(DataFile.FREIGHT) || ops.size() == 0){
             label_bookID.setText("000001");

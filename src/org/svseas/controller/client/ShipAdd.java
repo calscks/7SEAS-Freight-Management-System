@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -19,6 +20,7 @@ import org.svseas.model.table.Preview;
 import org.svseas.operations.ShipOperations;
 import org.svseas.utils.Dialogue;
 import org.svseas.utils.Previewer;
+import org.svseas.utils.Validator;
 import org.svseas.utils.manipulator.ShipManipulator;
 
 /**
@@ -49,6 +51,12 @@ public class ShipAdd extends ShipManipulator {
     @FXML
     @SuppressWarnings("Duplicates")
     public void initialize() {
+
+        ship_id.addEventFilter(KeyEvent.KEY_TYPED, Validator.validChar(20));
+        max_load.addEventFilter(KeyEvent.KEY_TYPED, Validator.validPrice(20));
+        ship_value.addEventFilter(KeyEvent.KEY_TYPED, Validator.validPrice(20));
+        contract_period.addEventFilter(KeyEvent.KEY_TYPED, Validator.validNo(20));
+
         loadCountries(cbox_country);
         loadUsername(cbox_username);
         loadType(cbox_shipType);

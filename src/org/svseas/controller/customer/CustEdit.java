@@ -5,9 +5,11 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import org.svseas.utils.Validator;
 import org.svseas.utils.manipulator.AccountManipulator;
 import org.svseas.data.DataFile;
 import org.svseas.model.account.CustomerAccount;
@@ -32,6 +34,11 @@ public class CustEdit extends AccountManipulator {
 
     @FXML
     public void initialize() {
+
+        username.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNo(20));
+        fullName.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNoSpace(100));
+        id_no.addEventFilter(KeyEvent.KEY_TYPED, Validator.validNo(20));
+
         BooleanBinding binding = username.textProperty().isEmpty()
                 .or(pwd.textProperty().isEmpty())
                 .or(fullName.textProperty().isEmpty())

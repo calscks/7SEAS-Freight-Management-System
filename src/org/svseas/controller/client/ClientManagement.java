@@ -14,6 +14,7 @@ import javafx.scene.control.TreeTableColumn;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import org.svseas.data.DataFile;
+import org.svseas.data.LoginData;
 import org.svseas.model.ObjectList;
 import org.svseas.model.account.ClientAccount;
 import org.svseas.model.table.Client;
@@ -44,6 +45,13 @@ public class ClientManagement {
     @FXML
     @SuppressWarnings("unchecked")
     public void initialize() {
+        if (Objects.equals(LoginData.authority, "Customer")){
+            btn_addClient.setVisible(false);
+            btn_editClient.setVisible(false);
+            btn_delClient.setVisible(false);
+            btn_refreshClient.setVisible(false);
+        }
+
         username.setCellValueFactory((TreeTableColumn.CellDataFeatures<Client, String> param) -> {
             if (username.validateValue(param))
                 return param.getValue().getValue().usernameProperty();

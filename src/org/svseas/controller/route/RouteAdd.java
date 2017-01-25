@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -13,6 +14,7 @@ import org.svseas.model.route.Port;
 import org.svseas.model.route.Route;
 import org.svseas.operations.RouteOperations;
 import org.svseas.utils.Dialogue;
+import org.svseas.utils.Validator;
 import org.svseas.utils.manipulator.RouteManipulator;
 
 import java.util.ArrayList;
@@ -38,6 +40,11 @@ public class RouteAdd extends RouteManipulator {
 
     @FXML
     public void initialize() {
+
+        route_id.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNo(20));
+        charge_per_nm.addEventFilter(KeyEvent.KEY_TYPED, Validator.validPrice(20));
+        route_name.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNoSpace(200));
+
         BooleanBinding binding = route_id.textProperty().isEmpty()
                 .or(charge_per_nm.textProperty().isEmpty())
                 .or(route_name.textProperty().isEmpty())
