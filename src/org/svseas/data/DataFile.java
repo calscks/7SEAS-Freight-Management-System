@@ -12,7 +12,8 @@ public enum DataFile {
     SHIP("Ship", "dat/ship.xml"),
     PORT("Port", "dat/port.xml"),
     ROUTE("Route", "dat/route.xml"),
-    ROUTESHIP("RouteShip", "dat/routeship.xml");
+    ROUTE_SHIP("RouteShip", "dat/routeship.xml"),
+    FREIGHT("Freight", "dat/freight.xml");
 
 
     private String data_name;

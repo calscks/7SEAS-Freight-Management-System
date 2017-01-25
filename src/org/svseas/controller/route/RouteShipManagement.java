@@ -86,7 +86,7 @@ public class RouteShipManagement {
         RouteShipOperations ops = new RouteShipOperations();
         ObjectList<RouteShip> routeshipList = ops.read();
         ObservableList<RouteShipInTable> assigns = FXCollections.observableArrayList();
-        if (DataFile.analyse(DataFile.ROUTESHIP)) {
+        if (DataFile.analyse(DataFile.ROUTE_SHIP)) {
             for (RouteShip routeShip : routeshipList.getList()) {
                 RouteShipInTable routeShipInTable = new RouteShipInTable(routeShip.getShip_id(), routeShip.getRoute_name());
                 assigns.add(routeShipInTable);

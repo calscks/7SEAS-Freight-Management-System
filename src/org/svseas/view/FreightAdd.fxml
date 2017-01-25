@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="freightadd_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="649.0" style="-fx-background-color: rgba(236, 240, 241, 1.0);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.svseas.controller.freight.FreightAdd">
+   <children>
+      <AnchorPane prefHeight="406.0" prefWidth="657.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" layoutX="55.0" layoutY="28.0" prefHeight="157.0" prefWidth="270.0" spacing="14.0" style="fx-border-color: #dddddd;">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="48.0" prefWidth="146.0" text="Booking ID:">
+                           <padding>
+                              <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                           </padding>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_bookID" prefHeight="37.0" prefWidth="111.0" text="000001">
+                           <padding>
+                              <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                           </padding>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.5" />
+                     </padding>
+                  </HBox>
+                  <JFXComboBox fx:id="cbox_source" editable="true" prefHeight="43.0" prefWidth="349.0" promptText="From...">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                     </padding>
+                  </JFXComboBox>
+                  <JFXComboBox fx:id="cbox_route" editable="true" prefHeight="43.0" prefWidth="349.0" promptText="Choose route">
+                     <padding>
+                        <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                     </padding>
+                  </JFXComboBox>
+                  <JFXTextField fx:id="cargo_weight" focusColor="#1c7eff" promptText="Cargo weight (ton)" unFocusColor="#75757585">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </VBox>
+            <JFXButton fx:id="btn_add" layoutX="125.0" layoutY="327.0" prefHeight="65.0" prefWidth="181.0" ripplerFill="#adadad86" text="ADD" textFill="#389a3d">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <VBox alignment="CENTER_LEFT" layoutX="325.0" layoutY="28.0" prefHeight="262.0" prefWidth="270.0" spacing="14.0">
+               <children>
+                  <JFXComboBox fx:id="cbox_customer" editable="true" prefHeight="43.0" prefWidth="339.0" promptText="Customer">
+                     <padding>
+                        <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                     </padding>
+                  </JFXComboBox>
+                  <JFXComboBox fx:id="cbox_destination" editable="true" prefHeight="43.0" prefWidth="339.0" promptText="To...">
+                     <padding>
+                        <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                     </padding>
+                  </JFXComboBox>
+                  <HBox prefHeight="22.0" prefWidth="322.0">
+                     <children>
+                        <VBox prefHeight="148.0" prefWidth="185.0">
+                           <children>
+                              <Label prefHeight="37.0" prefWidth="146.0" text="Type of Cargo:">
+                                 <padding>
+                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                                 </padding>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Cargo Charges:">
+                                 <padding>
+                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                                 </padding>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="37.0" prefWidth="172.0" text="Route Charges:">
+                                 <padding>
+                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                                 </padding>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="37.0" prefWidth="169.0" text="Total charges (USD):">
+                                 <padding>
+                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                                 </padding>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="185.0" prefWidth="90.0">
+                           <children>
+                              <Label fx:id="label_typeOfCargo" text="None" textFill="#00788f">
+                                 <padding>
+                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_cargoCharge" text="0" textFill="#00788f">
+                                 <padding>
+                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_routeCharge" text="0" textFill="#00788f">
+                                 <padding>
+                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_total" text="0.00" textFill="#00788f">
+                                 <padding>
+                                    <Insets bottom="5.3" left="9.3" right="9.3" top="5.3" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <JFXButton fx:id="btn_reset" layoutX="374.0" layoutY="338.0" prefHeight="43.0" prefWidth="86.0" ripplerFill="#adadad86" text="RESET" textFill="#389a3d">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

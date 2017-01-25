@@ -14,7 +14,7 @@ import java.util.Objects;
 public class RouteShipOperations extends Operation {
 
     private XMLOperation xmlops;
-    private DataFile df = DataFile.ROUTESHIP;
+    private DataFile df = DataFile.ROUTE_SHIP;
     private RouteShip routeShip;
 
     public RouteShipOperations(RouteShip routeShip) {
