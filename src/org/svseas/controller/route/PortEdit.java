@@ -2,9 +2,11 @@ package org.svseas.controller.route;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.svseas.model.route.Port;
@@ -41,11 +43,18 @@ public class PortEdit extends PortManipulator {
 
     @Override
     public void manipulate(JFXButton manipulator) {
-        Port port = new Port(port_id.getText(), port_name.getText(), dist_nextPort.getText());
-        PortOperations potops = new PortOperations(port);
-        potops.update(port.getPortId());
-        Stage thisStage = (Stage) portedit_root.getScene().getWindow();
-        thisStage.close();
+        manipulator.setOnMouseClicked(event -> {
+            if (event.getButton().equals(MouseButton.PRIMARY)){
+                Port port = new Port(port_id.getText(), port_name.getText(), dist_nextPort.getText());
+                PortOperations potops = new PortOperations(port);
+                potops.update(port.getPortId());
+                Platform.runLater(()->{
+                    Stage thisStage = (Stage) portedit_root.getScene().getWindow();
+                    thisStage.close();
+                });
+            }
+        });
+
     }
 
     @Override

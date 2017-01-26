@@ -43,7 +43,7 @@ public class ClientAdd extends AccountManipulator {
         btn_add.disableProperty().bind(binding);
         manipulate(btn_add);
 
-        username.addEventFilter(KeyEvent.KEY_TYPED, Validator.validChar(20));
+        username.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNo(20));
         companyName.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNoSpace(100));
         registry_no.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNo(20));
     }

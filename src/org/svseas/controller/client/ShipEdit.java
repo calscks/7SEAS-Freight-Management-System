@@ -51,7 +51,7 @@ public class ShipEdit extends ShipManipulator {
     @SuppressWarnings("Duplicates")
     public void initialize(){
 
-        ship_id.addEventFilter(KeyEvent.KEY_TYPED, Validator.validChar(20));
+        ship_id.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNo(20));
         max_load.addEventFilter(KeyEvent.KEY_TYPED, Validator.validPrice(20));
         ship_value.addEventFilter(KeyEvent.KEY_TYPED, Validator.validPrice(20));
         contract_period.addEventFilter(KeyEvent.KEY_TYPED, Validator.validNo(20));

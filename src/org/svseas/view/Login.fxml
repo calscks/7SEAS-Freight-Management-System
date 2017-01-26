@@ -11,7 +11,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
@@ -41,7 +40,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <VBox fx:id="vbox_Login" alignment="TOP_CENTER" layoutX="126.0" layoutY="140.0" prefHeight="220.0" prefWidth="282.0">
+            <VBox fx:id="vbox_Login" alignment="TOP_CENTER" layoutX="126.0" layoutY="140.0" prefHeight="129.0" prefWidth="282.0">
                <children>
                   <JFXTextField fx:id="tfName" focusColor="#1c7eff" maxWidth="1.7976931348623157E308" minWidth="180.0" prefHeight="31.0" prefWidth="200.0" promptText="Username" unFocusColor="#00305900">
                      <font>
@@ -56,25 +55,13 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </JFXPasswordField>
-                  <JFXButton fx:id="btn_Login" buttonType="RAISED" prefHeight="38.0" prefWidth="110.0" ripplerFill="#f8f8f896" style="-fx-background-color: rgba(22, 160, 133,1.0);" text="LOGIN" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                  </JFXButton>
-                  <HBox prefHeight="100.0" prefWidth="200.0" />
-                  <JFXButton fx:id="btn_custReg" buttonType="RAISED" prefHeight="38.0" ripplerFill="#f8f8f896" style="-fx-background-color: rgba(26, 188, 156,1.0);" text="Customer Registration" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                  </JFXButton>
                </children>
             </VBox>
+            <JFXButton fx:id="btn_Login" buttonType="RAISED" layoutX="212.0" layoutY="298.0" prefHeight="38.0" prefWidth="110.0" ripplerFill="#f8f8f896" style="-fx-background-color: rgba(22, 160, 133,1.0);" text="LOGIN" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
       <JFXDialog fx:id="dialog">

@@ -37,7 +37,7 @@ public class ClientEdit extends AccountManipulator {
     @FXML
     public void initialize(){
 
-        username.addEventFilter(KeyEvent.KEY_TYPED, Validator.validChar(20));
+        username.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNo(20));
         companyName.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNoSpace(100));
         registry_no.addEventFilter(KeyEvent.KEY_TYPED, Validator.validCharNo(20));
 
