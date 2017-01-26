@@ -59,6 +59,13 @@ public class RouteEdit extends RouteManipulator{
         btn_edit.disableProperty().bind(binding);
 
         manipulate(btn_edit);
+
+        btn_cancel.setOnMouseClicked(e -> {
+            if (e.getButton().equals(MouseButton.PRIMARY)) {
+                Stage thisStage = (Stage) routeedit_root.getScene().getWindow();
+                thisStage.close();
+            }
+        });
     }
 
     @Override

@@ -68,6 +68,13 @@ public class FreightEdit extends FreightManipulator {
         btn_edit.disableProperty().bind(binding);
 
         manipulate(btn_edit);
+
+        btn_cancel.setOnMouseClicked(e -> {
+            if (e.getButton().equals(MouseButton.PRIMARY)) {
+                Stage thisStage = (Stage) freightedit_root.getScene().getWindow();
+                thisStage.close();
+            }
+        });
     }
 
     @Override
@@ -96,6 +103,8 @@ public class FreightEdit extends FreightManipulator {
                 thisStage.close();
             }
         });
+
+
     }
 
     @Override

@@ -78,6 +78,13 @@ public class ShipEdit extends ShipManipulator {
 
         btn_edit.disableProperty().bind(binding);
         manipulate(btn_edit);
+
+        btn_cancel.setOnMouseClicked(e -> {
+            if (e.getButton().equals(MouseButton.PRIMARY)) {
+                Stage thisStage = (Stage) shipedit_root.getScene().getWindow();
+                thisStage.close();
+            }
+        });
     }
 
     //TODO: Cancel button
