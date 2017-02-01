@@ -89,8 +89,6 @@ public class RouteEdit extends RouteManipulator{
         });
     }
 
-    //TODO: cancel button
-
     @Override
     public <T> void initData(T route) {
         if (route instanceof Route){

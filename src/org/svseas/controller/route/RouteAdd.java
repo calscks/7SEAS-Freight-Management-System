@@ -89,7 +89,6 @@ public class RouteAdd extends RouteManipulator {
         });
     }
 
-    //TODO: Reset button
 
     @Override
     public <T> void initData(T param) {

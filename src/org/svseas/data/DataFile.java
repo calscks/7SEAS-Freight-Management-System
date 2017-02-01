@@ -5,6 +5,8 @@ import java.io.File;
 /**
  * Coded by Seong Chee Ken on 13/01/2017, 00:09.
  */
+
+//TODO: Show during presentation - usage of enums
 public enum DataFile {
     CUSTOMER("Customer", "dat/customer.xml"),
     ADMIN("Admin", "dat/admin.xml"),

@@ -46,7 +46,6 @@ public class PortEdit extends PortManipulator {
             }
         });
     }
-    //TODO: Cancel button
 
     @Override
     public void manipulate(JFXButton manipulator) {

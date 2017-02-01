@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Customer>
+    <customerAccount>
+        <password>123</password>
+        <username>cust1</username>
+        <fullName>Hihi</fullName>
+        <id>123</id>
+    </customerAccount>
+    <customerAccount>
+        <password>123</password>
+        <username>cust2</username>
+        <fullName>Hoho</fullName>
+        <id>123</id>
+    </customerAccount>
+</Customer>

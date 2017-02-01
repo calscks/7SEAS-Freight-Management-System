@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Freight>
+    <freight>
+        <bookingId>000001</bookingId>
+        <cargoType>TL</cargoType>
+        <cargoWeight>5</cargoWeight>
+        <customer>cust1</customer>
+        <destination>New York</destination>
+        <route>New Jersey to New York</route>
+        <shipId>C1C001</shipId>
+        <source>New Jersey</source>
+        <totalCharges>717.60</totalCharges>
+        <travel>New Jersey -&gt; New York</travel>
+    </freight>
+</Freight>

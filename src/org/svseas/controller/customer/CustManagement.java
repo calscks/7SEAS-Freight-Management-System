@@ -128,12 +128,14 @@ public class CustManagement {
         AccountOperations<CustomerAccount> ops = new AccountOperations<>(DataFile.CUSTOMER);
         ObjectList<CustomerAccount> custList = ops.read();
         ObservableList<Customer> customers = FXCollections.observableArrayList();
-        for (CustomerAccount cust : custList.getList()) {
-            Customer customer = new Customer(cust.getUsername(), cust.getFullName(), cust.getId());
-            customers.add(customer);
-        }
+        if (custList != null) {
+            for (CustomerAccount cust : custList.getList()) {
+                Customer customer = new Customer(cust.getUsername(), cust.getFullName(), cust.getId());
+                customers.add(customer);
+            }
 
-        table_cust.setRoot(new RecursiveTreeItem<>(customers, RecursiveTreeObject::getChildren));
-        table_cust.setShowRoot(false);
+            table_cust.setRoot(new RecursiveTreeItem<>(customers, RecursiveTreeObject::getChildren));
+            table_cust.setShowRoot(false);
+        }
     }
 }

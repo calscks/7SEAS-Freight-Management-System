@@ -137,11 +137,13 @@ public class ClientManagement {
         AccountOperations<ClientAccount> ops = new AccountOperations<>(df);
         ObjectList<ClientAccount> clientList = ops.read();
         ObservableList<Client> clients = FXCollections.observableArrayList();
-        for (ClientAccount cl : clientList.getList()) {
-            Client client = new Client(cl.getUsername(), cl.getCompanyName(), cl.getRegistryNo(), cl.getPhoneNo());
-            clients.add(client);
+        if (clientList != null) {
+            for (ClientAccount cl : clientList.getList()) {
+                Client client = new Client(cl.getUsername(), cl.getCompanyName(), cl.getRegistryNo(), cl.getPhoneNo());
+                clients.add(client);
+            }
+            table_client.setRoot(new RecursiveTreeItem<>(clients, RecursiveTreeObject::getChildren));
+            table_client.setShowRoot(false);
         }
-        table_client.setRoot(new RecursiveTreeItem<>(clients, RecursiveTreeObject::getChildren));
-        table_client.setShowRoot(false);
     }
 }

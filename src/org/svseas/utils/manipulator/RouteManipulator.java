@@ -36,11 +36,13 @@ public abstract class RouteManipulator extends Manipulator {
         PortOperations ops = new PortOperations();
         ObjectList<Port> portList = ops.read();
         ObservableList<String> portNames = FXCollections.observableArrayList();
-        for (Port port : portList.getList()){
-            portNames.add(port.getName());
+        if (portList != null) {
+            for (Port port : portList.getList()){
+                portNames.add(port.getName());
+            }
+            source.setItems(portNames);
+            dest.setItems(portNames);
         }
-        source.setItems(portNames);
-        dest.setItems(portNames);
     }
 
     //source, destination listeners, number of ports, length type, distance
@@ -63,7 +65,6 @@ public abstract class RouteManipulator extends Manipulator {
             if (dest.getSelectionModel().getSelectedItem() != null &&
                     source.getSelectionModel().getSelectedItem() != null) {
 
-                //TODO: Fix the reverse route's distance (reverse and converse shall be equal)
                 int end = dest.getSelectionModel().getSelectedIndex();
                 int start = source.getSelectionModel().getSelectedIndex();
                 int number = Math.abs(end - start);

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Client>
+    <clientAccount>
+        <password>123</password>
+        <username>client1</username>
+        <companyName>Company1</companyName>
+        <phoneNo>123</phoneNo>
+        <registryNo>123</registryNo>
+    </clientAccount>
+    <clientAccount>
+        <password>123</password>
+        <username>client2</username>
+        <companyName>Company2</companyName>
+        <phoneNo>123</phoneNo>
+        <registryNo>123</registryNo>
+    </clientAccount>
+</Client>

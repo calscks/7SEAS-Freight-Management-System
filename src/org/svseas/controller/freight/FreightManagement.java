@@ -121,7 +121,7 @@ public class FreightManagement {
         });
         custUsername.setCellValueFactory((TreeTableColumn.CellDataFeatures<FreightInTable, String> param) -> {
             if (custUsername.validateValue(param))
-                return param.getValue().getValue().bookingIdProperty();
+                return param.getValue().getValue().customerProperty();
             else
                 return custUsername.getComputedValue(param);
         });
@@ -139,13 +139,13 @@ public class FreightManagement {
         });
         route.setCellValueFactory((TreeTableColumn.CellDataFeatures<FreightInTable, String> param) -> {
             if (route.validateValue(param))
-                return param.getValue().getValue().bookingIdProperty();
+                return param.getValue().getValue().routeProperty();
             else
                 return route.getComputedValue(param);
         });
         travel.setCellValueFactory((TreeTableColumn.CellDataFeatures<FreightInTable, String> param) -> {
             if (travel.validateValue(param))
-                return param.getValue().getValue().bookingIdProperty();
+                return param.getValue().getValue().travelProperty();
             else
                 return travel.getComputedValue(param);
         });
@@ -167,14 +167,16 @@ public class FreightManagement {
         FreightOperations ops = new FreightOperations();
         ObjectList<Freight> flist = ops.read();
         ObservableList<FreightInTable> frOlist = FXCollections.observableArrayList();
-        for (Freight freight : flist.getList()) {
-            FreightInTable freightInTable = new FreightInTable(freight.getBookingId(), freight.getCustomer(), freight.getSource(),
-                    freight.getDestination(), freight.getRoute(), freight.getTravel(), freight.getCargoWeight(),
-                    freight.getCargoType(), Double.parseDouble(freight.getTotalCharges()));
-            frOlist.add(freightInTable);
-        }
+        if (flist != null) {
+            for (Freight freight : flist.getList()) {
+                FreightInTable freightInTable = new FreightInTable(freight.getBookingId(), freight.getCustomer(), freight.getSource(),
+                        freight.getDestination(), freight.getRoute(), freight.getTravel(), freight.getCargoWeight(),
+                        freight.getCargoType(), Double.parseDouble(freight.getTotalCharges()));
+                frOlist.add(freightInTable);
+            }
 
-        table_freight.setRoot(new RecursiveTreeItem<>(frOlist, RecursiveTreeObject::getChildren));
-        table_freight.setShowRoot(false);
+            table_freight.setRoot(new RecursiveTreeItem<>(frOlist, RecursiveTreeObject::getChildren));
+            table_freight.setShowRoot(false);
+        }
     }
 }

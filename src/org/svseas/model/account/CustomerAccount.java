@@ -7,6 +7,8 @@ import java.util.Objects;
  * Coded by Seong Chee Ken on 11/01/2017, 19:24.
  */
 
+//TODO: Show during presentation - ENCAPSULATION and SUBTYPE POLYMORPHISM
+
 @XmlRootElement
 public class CustomerAccount extends Account{
     private String fullName, id;
@@ -40,6 +42,7 @@ public class CustomerAccount extends Account{
         return (o instanceof CustomerAccount) && (Objects.equals(((CustomerAccount) o).getUsername(), super.getUsername()));
     }
 
+    //TODO: Show during presentation - METHOD OVERRIDING
     @Override
     public int hashCode(){
         int result = 3;

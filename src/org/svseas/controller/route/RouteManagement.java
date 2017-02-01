@@ -174,15 +174,17 @@ public class RouteManagement {
         RouteOperations ops = new RouteOperations();
         ObjectList<Route<Port>> routeList = ops.read();
         ObservableList<RouteInTable> routesInTable = FXCollections.observableArrayList();
-        for (Route<Port> route : routeList.getList()) {
-            RouteInTable routeInTable = new RouteInTable(route.getRouteId(), route.getRouteName(),
-                    route.getRouteLength(), route.getTravel(), route.getDistance(),
-                    Double.parseDouble(route.getRatePerNm()), Double.parseDouble(route.getRatePerNm()));
+        if (routeList != null) {
+            for (Route<Port> route : routeList.getList()) {
+                RouteInTable routeInTable = new RouteInTable(route.getRouteId(), route.getRouteName(),
+                        route.getRouteLength(), route.getTravel(), route.getDistance(),
+                        Double.parseDouble(route.getRatePerNm()), Double.parseDouble(route.getRatePerNm()));
 
-            routesInTable.add(routeInTable);
+                routesInTable.add(routeInTable);
+            }
+            table_route.setRoot(new RecursiveTreeItem<>(routesInTable, RecursiveTreeObject::getChildren));
+            table_route.setShowRoot(false);
         }
-        table_route.setRoot(new RecursiveTreeItem<>(routesInTable, RecursiveTreeObject::getChildren));
-        table_route.setShowRoot(false);
     }
 
 

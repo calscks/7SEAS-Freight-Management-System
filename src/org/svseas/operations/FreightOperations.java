@@ -12,6 +12,9 @@ import java.util.Objects;
  * Coded by Seong Chee Ken on 25/01/2017, 12:13.
  */
 @SuppressWarnings("unchecked")
+
+//TODO: Show during presentation - AGGREGATION
+
 public class FreightOperations extends Operation {
 
     private XMLOperation xmlops;
@@ -54,6 +57,8 @@ public class FreightOperations extends Operation {
         }.run();
         Tester.SUCCESS.printer();
     }
+
+    //TODO: Show during presentation - CONCURRENCY (MINOR)
 
     @Override
     public boolean delete(String book_id) {

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Route>
+    <route>
+        <distance>30.0</distance>
+        <port>
+            <distance_nextPort>30</distance_nextPort>
+            <name>New York</name>
+            <portId>P001</portId>
+        </port>
+        <port>
+            <distance_nextPort>34</distance_nextPort>
+            <name>New Jersey</name>
+            <portId>P002</portId>
+        </port>
+        <ratePerNm>1.4</ratePerNm>
+        <routeId>R1</routeId>
+        <routeLength>Short</routeLength>
+        <routeName>New York to New Jersey</routeName>
+        <total>42.00</total>
+        <travel>New York -&gt; New Jersey</travel>
+    </route>
+    <route>
+        <distance>700.0</distance>
+        <port>
+            <distance_nextPort>30</distance_nextPort>
+            <name>New York</name>
+            <portId>P001</portId>
+        </port>
+        <port>
+            <distance_nextPort>34</distance_nextPort>
+            <name>New Jersey</name>
+            <portId>P002</portId>
+        </port>
+        <port>
+            <distance_nextPort>120</distance_nextPort>
+            <name>Los Angeles</name>
+            <portId>P003</portId>
+        </port>
+        <port>
+            <distance_nextPort>55</distance_nextPort>
+            <name>Washington</name>
+            <portId>P004</portId>
+        </port>
+        <port>
+            <distance_nextPort>69</distance_nextPort>
+            <name>Miami</name>
+            <portId>P005</portId>
+        </port>
+        <port>
+            <distance_nextPort>39</distance_nextPort>
+            <name>Alabama</name>
+            <portId>P006</portId>
+        </port>
+        <port>
+            <distance_nextPort>46</distance_nextPort>
+            <name>Kansas</name>
+            <portId>P007</portId>
+        </port>
+        <port>
+            <distance_nextPort>67</distance_nextPort>
+            <name>New Mexico</name>
+            <portId>P008</portId>
+        </port>
+        <port>
+            <distance_nextPort>87</distance_nextPort>
+            <name>Texas</name>
+            <portId>P009</portId>
+        </port>
+        <port>
+            <distance_nextPort>87</distance_nextPort>
+            <name>Houston</name>
+            <portId>P010</portId>
+        </port>
+        <port>
+            <distance_nextPort>66</distance_nextPort>
+            <name>Las Vegas</name>
+            <portId>P011</portId>
+        </port>
+        <port>
+            <distance_nextPort>45</distance_nextPort>
+            <name>Chicago</name>
+            <portId>P012</portId>
+        </port>
+        <ratePerNm>1.2</ratePerNm>
+        <routeId>R3</routeId>
+        <routeLength>Medium</routeLength>
+        <routeName>New York to Chicago</routeName>
+        <total>840.00</total>
+        <travel>New York -&gt; New Jersey -&gt; Los Angeles -&gt; Washington -&gt; Miami -&gt; Alabama -&gt; Kansas -&gt; New Mexico -&gt; Texas -&gt; Houston -&gt; Las Vegas -&gt; Chicago</travel>
+    </route>
+    <route>
+        <distance>34.0</distance>
+        <port>
+            <distance_nextPort>34</distance_nextPort>
+            <name>New Jersey</name>
+            <portId>P002</portId>
+        </port>
+        <port>
+            <distance_nextPort>30</distance_nextPort>
+            <name>New York</name>
+            <portId>P001</portId>
+        </port>
+        <ratePerNm>1.4</ratePerNm>
+        <routeId>R2</routeId>
+        <routeLength>Short</routeLength>
+        <routeName>New Jersey to New York</routeName>
+        <total>47.60</total>
+        <travel>New Jersey -&gt; New York</travel>
+    </route>
+    <route>
+        <distance>184.0</distance>
+        <port>
+            <distance_nextPort>30</distance_nextPort>
+            <name>New York</name>
+            <portId>P001</portId>
+        </port>
+        <port>
+            <distance_nextPort>34</distance_nextPort>
+            <name>New Jersey</name>
+            <portId>P002</portId>
+        </port>
+        <port>
+            <distance_nextPort>120</distance_nextPort>
+            <name>Los Angeles</name>
+            <portId>P003</portId>
+        </port>
+        <port>
+            <distance_nextPort>55</distance_nextPort>
+            <name>Washington</name>
+            <portId>P004</portId>
+        </port>
+        <ratePerNm>1.22</ratePerNm>
+        <routeId>R4</routeId>
+        <routeLength>Short</routeLength>
+        <routeName>New York to Washington</routeName>
+        <total>224.48</total>
+        <travel>New York -&gt; New Jersey -&gt; Los Angeles -&gt; Washington</travel>
+    </route>
+</Route>

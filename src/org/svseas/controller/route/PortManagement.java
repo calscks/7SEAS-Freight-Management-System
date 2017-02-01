@@ -198,9 +198,9 @@ public class PortManagement {
             for (Port port : portList.getList()) {
                 PortInTable portInTable = new PortInTable(port.getPortId(), port.getName(), port.getDistance_nextPort());
                 portInTables.add(portInTable);
-                table_port.setRoot(new RecursiveTreeItem<>(portInTables, RecursiveTreeObject::getChildren));
-                table_port.setShowRoot(false);
             }
+            table_port.setRoot(new RecursiveTreeItem<>(portInTables, RecursiveTreeObject::getChildren));
+            table_port.setShowRoot(false);
         }
     }
 }

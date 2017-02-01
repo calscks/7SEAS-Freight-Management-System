@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Port>
+    <port>
+        <distance_nextPort>30</distance_nextPort>
+        <name>New York</name>
+        <portId>P001</portId>
+    </port>
+    <port>
+        <distance_nextPort>34</distance_nextPort>
+        <name>New Jersey</name>
+        <portId>P002</portId>
+    </port>
+    <port>
+        <distance_nextPort>120</distance_nextPort>
+        <name>Los Angeles</name>
+        <portId>P003</portId>
+    </port>
+    <port>
+        <distance_nextPort>55</distance_nextPort>
+        <name>Washington</name>
+        <portId>P004</portId>
+    </port>
+    <port>
+        <distance_nextPort>69</distance_nextPort>
+        <name>Miami</name>
+        <portId>P005</portId>
+    </port>
+    <port>
+        <distance_nextPort>39</distance_nextPort>
+        <name>Alabama</name>
+        <portId>P006</portId>
+    </port>
+    <port>
+        <distance_nextPort>46</distance_nextPort>
+        <name>Kansas</name>
+        <portId>P007</portId>
+    </port>
+    <port>
+        <distance_nextPort>67</distance_nextPort>
+        <name>New Mexico</name>
+        <portId>P008</portId>
+    </port>
+    <port>
+        <distance_nextPort>87</distance_nextPort>
+        <name>Texas</name>
+        <portId>P009</portId>
+    </port>
+    <port>
+        <distance_nextPort>87</distance_nextPort>
+        <name>Houston</name>
+        <portId>P010</portId>
+    </port>
+    <port>
+        <distance_nextPort>66</distance_nextPort>
+        <name>Las Vegas</name>
+        <portId>P011</portId>
+    </port>
+    <port>
+        <distance_nextPort>45</distance_nextPort>
+        <name>Chicago</name>
+        <portId>P012</portId>
+    </port>
+</Port>

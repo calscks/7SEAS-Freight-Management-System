@@ -48,6 +48,6 @@ public class XMLOperation {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-        return new Object();
+        return null;
     }
 }

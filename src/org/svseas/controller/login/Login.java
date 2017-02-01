@@ -95,9 +95,9 @@ public class Login {
                     AccountOperations<ClientAccount> client = new AccountOperations<>(DataFile.CLIENT);
 
                     if (!admin.read(username, pwd) && !customer.read(username, pwd) && !client.read(username, pwd)) {
-                        dialog.setTransitionType(JFXDialog.DialogTransition.CENTER);
-                        dialog.show(login_root);
-                        acceptButton.setOnMouseClicked((e)-> dialog.close());
+                            dialog.setTransitionType(JFXDialog.DialogTransition.CENTER);
+                            dialog.show(login_root);
+                            acceptButton.setOnMouseClicked((e) -> dialog.close());
                     } else {
                         LoginData.username = username;
                         if (admin.read(username))

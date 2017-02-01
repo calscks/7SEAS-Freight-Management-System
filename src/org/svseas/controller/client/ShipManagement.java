@@ -174,11 +174,13 @@ public class ShipManagement {
         ShipOperations ops = new ShipOperations();
         ObjectList<Ship> shipList = ops.read();
         ObservableList<ShipInTable> shipInTables = FXCollections.observableArrayList();
-        for (Ship ship : shipList.getList()) {
-            ShipInTable shipInTable = new ShipInTable(ship.getShip_id(), ship.getUsername(), ship.getType(),
-                    ship.getMaxLoad(), ship.getValue(), ship.getCountry(), ship.getPeriod(),
-                    ship.getLeaseType().toString());
-            shipInTables.add(shipInTable);
+        if (shipList != null) {
+            for (Ship ship : shipList.getList()) {
+                ShipInTable shipInTable = new ShipInTable(ship.getShip_id(), ship.getUsername(), ship.getType(),
+                        ship.getMaxLoad(), ship.getValue(), ship.getCountry(), ship.getPeriod(),
+                        ship.getLeaseType().toString());
+                shipInTables.add(shipInTable);
+            }
             table_ship.setRoot(new RecursiveTreeItem<>(shipInTables, RecursiveTreeObject::getChildren));
             table_ship.setShowRoot(false);
         }

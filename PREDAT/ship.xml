@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Ship>
+    <ship>
+        <country>United States</country>
+        <leaseType>CONTRACT</leaseType>
+        <maxLoad>200</maxLoad>
+        <period>10</period>
+        <ship_id>C1C001</ship_id>
+        <type>Containers</type>
+        <username>client1</username>
+        <value>120000</value>
+    </ship>
+    <ship>
+        <country>United States</country>
+        <leaseType>OPERATION</leaseType>
+        <maxLoad>170</maxLoad>
+        <period>5</period>
+        <ship_id>C2B001</ship_id>
+        <type>Barge</type>
+        <username>client2</username>
+        <value>110000</value>
+    </ship>
+    <ship>
+        <country>United States</country>
+        <leaseType>CONTRACT</leaseType>
+        <maxLoad>130</maxLoad>
+        <period>5</period>
+        <ship_id>C1C002</ship_id>
+        <type>Cruises</type>
+        <username>client1</username>
+        <value>145000</value>
+    </ship>
+    <ship>
+        <country>United States</country>
+        <leaseType>CONTRACT</leaseType>
+        <maxLoad>250</maxLoad>
+        <period>7</period>
+        <ship_id>C2T001</ship_id>
+        <type>Tankers</type>
+        <username>client2</username>
+        <value>130000</value>
+    </ship>
+</Ship>

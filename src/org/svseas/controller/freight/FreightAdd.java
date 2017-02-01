@@ -106,7 +106,6 @@ public class FreightAdd extends FreightManipulator {
         });
     }
 
-    //TODO: Reset Button
 
     @Override
     public <T> void initData(T param) {}

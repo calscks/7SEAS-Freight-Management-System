@@ -13,6 +13,9 @@ import org.svseas.utils.Tester;
  * Coded by Seong Chee Ken on 18/01/2017, 15:58. Proper CRUD operations for customer, client and admin.
  * Mostly CRUD operations for customer and client.
  */
+
+//TODO: Show during presentation - GENERICS
+
 public class AccountOperations<T extends Account> extends Operation {
     private XMLOperation xmlops;
     private Account account;
@@ -65,25 +68,31 @@ public class AccountOperations<T extends Account> extends Operation {
     @SuppressWarnings("unchecked")
     public boolean read(String username, String password) {
         ObjectList<T> list = (ObjectList<T>) xmlops.read(df);
-        for (T account : list.getList()) {
-            if (account.getUsername().equals(username) && account
-                    .getPassword().equals(password)) {
-                Tester.SUCCESS_MATCH.printer();
-                return true;
+        if (list != null) {
+            for (T account : list.getList()) {
+                if (account.getUsername().equals(username) && account
+                        .getPassword().equals(password)) {
+                    Tester.SUCCESS_MATCH.printer();
+                    return true;
+                }
             }
         }
         Tester.FAIL_MATCH.printer();
         return false;
     }
 
+    //TODO: Show during presentation - METHOD OVERLOADING
+
     //validation match
     @SuppressWarnings("unchecked")
     public boolean read(String username) {
         ObjectList<T> list = (ObjectList<T>) xmlops.read(df);
-        for (T account : list.getList()) {
-            if (account.getUsername().equals(username)) {
-                Tester.SUCCESS_MATCH.printer();
-                return true;
+        if (list != null) {
+            for (T account : list.getList()) {
+                if (account.getUsername().equals(username)) {
+                    Tester.SUCCESS_MATCH.printer();
+                    return true;
+                }
             }
         }
         Tester.FAIL_MATCH.printer();

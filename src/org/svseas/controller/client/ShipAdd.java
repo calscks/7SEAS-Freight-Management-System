@@ -111,7 +111,6 @@ public class ShipAdd extends ShipManipulator {
         });
     }
 
-    //TODO: Reset button
 
     @Override
     public <T> void initData(T param) {}

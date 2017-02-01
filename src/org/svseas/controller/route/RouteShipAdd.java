@@ -39,11 +39,15 @@ public class RouteShipAdd {
         ObservableList<String> shipIds = FXCollections.observableArrayList();
         ObservableList<String> routeNames = FXCollections.observableArrayList();
 
-        for (Ship ship : shipList.getList()) {
-            shipIds.add(ship.getShip_id());
+        if (shipList != null) {
+            for (Ship ship : shipList.getList()) {
+                shipIds.add(ship.getShip_id());
+            }
         }
-        for (Route<Port> route : routeList.getList()) {
-            routeNames.add(route.getRouteName());
+        if (routeList != null) {
+            for (Route<Port> route : routeList.getList()) {
+                routeNames.add(route.getRouteName());
+            }
         }
 
         cbox_ship.setItems(shipIds);

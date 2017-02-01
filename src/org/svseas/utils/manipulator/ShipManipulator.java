@@ -98,7 +98,6 @@ public abstract class ShipManipulator extends Manipulator{
                 label_total.setText("0.00");
             } else {
                 //i want to prevent lag as much as possible
-                //TODO: Store all values into list and populate into preview table. Status: DONE
                 new Task<Void>() {
                     @Override
                     protected Void call() throws Exception {

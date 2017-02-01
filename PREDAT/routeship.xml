@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RouteShip>
+    <routeShip>
+        <route_name>New York to New Jersey</route_name>
+        <ship_id>C1C001</ship_id>
+    </routeShip>
+    <routeShip>
+        <route_name>New York to Chicago</route_name>
+        <ship_id>C2B001</ship_id>
+    </routeShip>
+    <routeShip>
+        <route_name>New Jersey to New York</route_name>
+        <ship_id>C1C002</ship_id>
+    </routeShip>
+    <routeShip>
+        <route_name>New York to Washington</route_name>
+        <ship_id>C2T001</ship_id>
+    </routeShip>
+    <routeShip>
+        <route_name>New Jersey to New York</route_name>
+        <ship_id>C1C001</ship_id>
+    </routeShip>
+</RouteShip>

@@ -8,6 +8,9 @@ import org.svseas.utils.Tester;
  * Coded by Seong Chee Ken on 23/01/2017, 23:55.
  */
 @SuppressWarnings("unchecked")
+
+//TODO: Show during presentation - ABSTRACTION && GENERICS
+
 public abstract class Operation {
 
     public <T> boolean create(T type, XMLOperation xmlops, DataFile df){

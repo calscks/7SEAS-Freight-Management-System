@@ -25,6 +25,9 @@ import org.svseas.utils.manipulator.ShipManipulator;
 /**
  * Coded by Seong Chee Ken on 22/01/2017, 17:20.
  */
+
+//TODO: SHOW during presentation: This is inheritance (multi-level) Manipulator -> ShipManipulator -> ShipEdit
+
 public class ShipEdit extends ShipManipulator {
     @FXML
     private StackPane shipedit_root;
@@ -86,8 +89,6 @@ public class ShipEdit extends ShipManipulator {
             }
         });
     }
-
-    //TODO: Cancel button
 
     @Override
     public void manipulate(JFXButton button) {
